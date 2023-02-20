@@ -156,39 +156,39 @@ body, html {
   <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
+  <div class="w3-row-padding w3-center w3-opacity-min w3-grayscale-min">
     <div class="w3-col m3">
-      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      <img src="images/banjo.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <img src="images/banjo.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      <img src="images/lapsteel.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <img src="images/classic.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
     </div>
   </div>
 
-  <div class="w3-row-padding w3-center w3-section">
+  <div class="w3-row-padding w3-center w3-section w3-opacity-min w3-grayscale-min">
     <div class="w3-col m3">
-      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+      <img src="images/strat.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+      <img src="images/ukulele.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+      <img src="images/bass.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      <img src="images/acoustic.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
     <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
   </div>
@@ -215,85 +215,32 @@ body, html {
   <h3 class="w3-center">RENDEZ-VOUS</h3>
   <p class="w3-center"><em>Pour prendre rendez-vous</em></p>
 
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="images/1.jpg" class="w3-image w3-round" style="width:100%">
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Montréal, QC, Canada<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
-      </div>
-      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </form>
+  <div class="w3-row w3-padding-32 w3-section w3-center">
 
-<!-- FCF START -->
-    <div style="max-width:500px;padding:30px">
-        <div id="fcf-form">
-            <form class="fcf-form-class" id="proversion" method="post" action="fcf-assets/fcf.process.php">
 
-                <div class="field">
-                    <label for="Name" class="label has-text-weight-normal">Your name</label>
-                    <div class="control">
-                        <input type="text" name="Name" id="Name" class="input is-full-width" maxlength="100"
-                            data-validate-field="Name">
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="Email" class="label has-text-weight-normal">Your email address</label>
-                    <div class="control">
-                        <input type="email" name="Email" id="Email" class="input is-full-width" maxlength="100"
-                            data-validate-field="Email">
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="Message" class="label has-text-weight-normal">Your message</label>
-                    <div class="control">
-                        <textarea name="Message" id="Message" class="textarea" maxlength="3000" rows="5" 
-                        data-validate-field="Message"></textarea>
-                    </div>
-                </div>
-                <div id="fcf-status" class="fcf-status"></div>
-                <div class="field">
-                    <div class="buttons">
-                        <button id="fcf-button" type="submit" class="button is-link is-medium">Send Message</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="fcf-thank-you" style="display:none">
-            <!-- Thank you message goes below -->
-            <strong>Thank you</strong>
-            <p>Thanks for contacting us, we will get back in touch with you soon.</p>
-            <!-- Thank you message goes above -->
-        </div>
-    </div>
-    <script src="fcf-assets/js/fcf.just-validate.min.js"></script>
-    <script src="fcf-assets/js/fcf.form.js"></script>
-<!-- FCF END -->
+     <a style="text-decoration:none" href="tel:514-123-4567" class="fa fa-phone fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Phone 514-123-4567"></a><a style="text-decoration:none" href="tel:514-123-4567"</a>Phone: 514-123-4567<br>
+
+     <a style="text-decoration:none" href="mailto:mail@mail.com" class="fa fa-envelope fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="E-mail mail@mail.com"></a>
+<a style="text-decoration:none" href="mailto:mail@mail.com"</a>Email: mail@mail.com<br>
+
+
+     <a style="text-decoration:none" href="https://www.google.com/maps/place/600+Rue+Jean-Talon+E+suite+210,+Montreal,+QC+H2R+3A8,+Canada/@45.539297,-73.613165,17z/data=!4m6!3m5!1s0x4cc919151c25d471:0x38761d1f9b5c6f3!8m2!3d45.5392967!4d-73.6131648!16s%2Fg%2F11sd33qwmq?hl=en" class="fa fa-map-marker fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Montreal Map"></a>
+<a style="text-decoration:none" href="https://www.google.com/maps/place/600+Rue+Jean-Talon+E+suite+210,+Montreal,+QC+H2R+3A8,+Canada/@45.539297,-73.613165,17z/data=!4m6!3m5!1s0x4cc919151c25d471:0x38761d1f9b5c6f3!8m2!3d45.5392967!4d-73.6131648!16s%2Fg%2F11sd33qwmq?hl=en"</a>Montréal, QC, Canada<br>
+</div>
+
+
+<div class="w3-center w3-grayscale-min">
+<hr style="text-align:center;width=100%;">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d763.6284114385134!2d-73.61320556821087!3d45.5395467731828!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc919151c25d471%3A0x38761d1f9b5c6f3!2s600%20Rue%20Jean-Talon%20E%20suite%20210%2C%20Montreal%2C%20QC%20H2R%203A8%2C%20Canada!5e0!3m2!1sen!2sus!4v1676855734988!5m2!1sen!2sus" width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
 
 
-    </div>
   </div>
 </div>
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+<footer class="w3-center w3-black w3-padding-64 w3-opacity">
   <a href="#accueil" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -303,6 +250,13 @@ body, html {
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
+
+   <div class="w3-xlarge w3-center w3-black">
+     <a href="mailto:davepb9@hotmail.com" class="fa fa-envelope w3-hover-opacity" title="E-mail davepb9@hotmail.com"></a>
+     <a href="https://www.facebook.com/davidpbrisson" class="fa fa-facebook-official w3-hover-opacity" title="Open Facebook"></a>
+     <a href="https://www.instagram.com/davidpbris/" class="fa fa-instagram w3-hover-opacity" title="Open Instagram"></a>
+     <a href="https://www.linkedin.com/in/david-brisson-66000551/" class="fa fa-linkedin w3-hover-opacity" title="Open Linkedin"></a>
+   </div>
 </footer>
  
 <script>
