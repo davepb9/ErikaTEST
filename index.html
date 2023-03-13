@@ -16,6 +16,8 @@ body, html {
   height: 100%;
   color: #777;
   line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Create a Parallax Effect */
@@ -45,6 +47,8 @@ body, html {
 }
 
 .w3-wide {letter-spacing: 10px;}
+.w3-condensed {letter-spacing: 2px;}
+.w3-xcondensed {letter-spacing: 0px;}
 .w3-hover-opacity {cursor: pointer;}
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -66,7 +70,7 @@ body, html {
     </a>
     <a href="#accueil" class="w3-bar-item w3-button">ACCUEIL</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> À PROPOS</a>
-    <a href="#musictherapy" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> MUSICOTHÉRAPIE</a>
+    <a href="#musictherapy" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-institution"></i> MUSICOTHÉRAPIE</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
@@ -85,7 +89,14 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="accueil">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ERIKA GUITTARD<span class="w3-hide-small"> - Musicothérapeute</span></span>
+    	<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-hide-medium w3-hide-small w3-animate-opacity">ERIKA GUITTARD
+	<span class="w3-condensed"> - Musicothérapeute, MTA</span></span>
+
+    	<span class="w3-center w3-padding-large w3-black w3-xlarge w3-condensed w3-hide-large w3-hide-small w3-animate-opacity">ERIKA GUITTARD
+	<span class="w3-condensed"> - Musicothérapeute, MTA</span></span>
+
+    	<span class="w3-center w3-padding-large w3-black w3-xlarge w3-xcondensed w3-hide-large w3-hide-medium w3-animate-opacity">ERIKA GUITTARD
+	<span class="w3-xcondensed"> - Musicothérapeute, MTA</span></span>
   </div>
 </div>
 
@@ -98,12 +109,12 @@ body, html {
     qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>Erika Guittard, MTA</b></p><br>
-      <img src="images/1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo 1" width="500" height="333">
+      <p><b><i class="fa fa-user-o w3-margin-right"></i>Erika Guittard, MTA</b></p><br>
+      <img src="images/1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo 1" width="500" height="100%">
     </div>
 
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
+    <!-- BIO -->
+    <div class="w3-col m6 w3-padding-large">
       <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -115,7 +126,7 @@ body, html {
 
 
 <!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
+<div class="bgimg-2 w3-display-container w3-opacity-min" id="musictherapy">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide">MUSICOTHÉRAPIE</span>
   </div>
@@ -128,20 +139,20 @@ body, html {
     <div class="w3-row-padding w3-center" style="margin-top:64px">
 
       <div class="w3-third">
-        <i class="fa fa-paint-brush w3-margin-bottom w3-jumbo w3-center"></i>
-        <p class="w3-large">Répondez à l'appel créatif</p>
-        <p>Une plateforme centrée sur l'apprentissage et le développement personnel</p>
+        <i class="fa fa-music w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Approches 1</p>
+        <p>Une approche centrée sur l'apprentissage et le développement personnel</p>
         <p><a href="#disciplines" class="w3-block w3-button w3-dark-grey"> Trouver une formation</a></p>
       </div>
       <div class="w3-third">
-        <i class="fa fa-film w3-margin-bottom w3-jumbo"></i>
-        <p class="w3-large">Partagez votre démarche</p>
+        <i class="fa fa-medkit w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large"> Approches 2</p>
         <p>Je suis un artiste expert et je souhaite partager mon processus</p>
         <p><a href="mailto:touspourart@gmail.com" class="w3-block w3-button w3-dark-grey"> Proposer mes services</a></p>
       </div>
       <div class="w3-third">
         <i class="fa fa-commenting w3-margin-bottom w3-jumbo"></i>
-        <p class="w3-large">Échangez avec des paires</p>
+        <p class="w3-large">Approches 3</p>
         <p>Rejoignez la communauté et discutez de vos projets et votre parcours</p>
         <p><a href="mailto:touspourart@gmail.com" class="w3-block w3-button w3-dark-grey"> Discuter</a></p>
       </div>
@@ -152,14 +163,14 @@ body, html {
 
 
 <!-- Container (Musictherapy Section) -->
-<div class="w3-content w3-container w3-padding-64" id="musictherapy">
-  <h3 class="w3-center">MY WORK</h3>
+<div class="w3-content w3-container w3-padding-64">
+  <h3 class="w3-center">INSTRUMENTS</h3>
   <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center w3-opacity-min w3-grayscale-min">
     <div class="w3-col m3">
-      <img src="images/banjo.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains"><p>TEXT
+      <img src="images/strat.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains"><p>TEXT
     </div>
 
     <div class="w3-col m3">
@@ -186,62 +197,88 @@ body, html {
 
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">À PROPOS</h3>
+<div class="w3-content w3-container w3-padding-64">
+  <h3 class="w3-center">TEXTE</h3>
   <p class="w3-center"><em>I love photography</em></p>
   <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
     qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+
+
+  <div class="w3-row-padding w3-center">
+
+  <div class="w3-col m4">  
+  	<li>Coffeedfsdfsd</li>
+  	<li>Teafdfsdfsd</li>
+  	<li>CocaColafdsfsdf</li>
+  </div>
+
+  <div class="w3-col m4">  
+  	<li>Coffeedfsdfsd</li>
+  	<li>Teafdfsdfsd</li>
+  	<li>CocaColafdsfsdf</li>
+  </div>
+
+  <div class="w3-col m4">  
+  	<li>Coffeedfsdfsd</li>
+  	<li>Teafdfsdfsd</li>
+  	<li>CocaColafdsfsdf</li>
+  </div>
+
 </div>
 
 
 
+</div>
 
 
 
 <!-- Pricing Section -->
 <div class="w3-container w3-center" style="padding:16px 10%" id="pricing">
+  <h3 class="w3-center">TARIFS</h3>
   <p class="w3-large">Choisissez votre laissez passer et débutez dès aujourd'hui</p>
   <div class="w3-row-padding" style="margin-top:32px">
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-dark-gray w3-xlarge w3-padding-32">On débute</li>
-        <li class="w3-padding-16"><b>1 semaine</b></li>
-        <li class="w3-padding-16">Limité</li>
-        <li class="w3-padding-16">Participer à la communauté</li>
-          <h2 class="w3-wide">Gratuit</h2>
-          <span class="w3-opacity">une semaine</span>
+        <li class="w3-dark-gray w3-xlarge w3-padding-32">En Ligne</li>
+        <li class="w3-padding-16"><b>Par séance</b></li>
+        <li class="w3-padding-16">À la carte</li>
+        <li class="w3-padding-16">fdfgdfgsfd</li>
+          <h2 class="w3-wide">$ 100</h2>
+          <span class="w3-opacity">pour 1 heure</span>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">J'y vais</button>
+        <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
+
         </li>
       </ul>
     </div>
     <div class="w3-third">
       <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-red w3-xlarge w3-padding-48">On se lance à fond</li>
-        <li class="w3-padding-16"><b>Accès à tout le contenu</b></li>
-        <li class="w3-padding-16"><b>Illimité</b></li>
-        <li class="w3-padding-16">Participer à la communauté</li>
-          <h2 class="w3-wide">$ 25</h2>
+        <li class="w3-red w3-xlarge w3-padding-48">Indivuduel</li>
+        <li class="w3-padding-16"><b>Séances et suivi</b></li>
+        <li class="w3-padding-16"><b>Chaque semaine</b></li>
+        <li class="w3-padding-16">De 4 à 16 semaines</li>
+          <h2 class="w3-wide">$ 400</h2>
           <span class="w3-opacity">par mois</span>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Je suis prêt</button>
+        <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
         </li>
       </ul>
     </div>
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-dark-gray w3-xlarge w3-padding-32">On y va à la carte</li>
-        <li class="w3-padding-16">Contenu de votre choix</li>
-        <li class="w3-padding-16">Personnalisé</li>
-        <li class="w3-padding-16">Participer à la communauté</li>
-          <h2 class="w3-wide">$ 10</h2>
-          <span class="w3-opacity">par atelier</span>
+        <li class="w3-dark-gray w3-xlarge w3-padding-32">En groupe</li>
+        <li class="w3-padding-16">Séances et suivi</li>
+        <li class="w3-padding-16">Chaque semaine</li>
+        <li class="w3-padding-16">De 4 à 16 semaines</li>
+          <h2 class="w3-wide">$ 200</h2>
+          <span class="w3-opacity">par mois</span>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Explorer</button>
+        <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
         </li>
       </ul>
     </div>
