@@ -8,8 +8,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-	<link href="fcf-assets/css/fcf.default.css" rel="stylesheet">
-
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -82,7 +80,6 @@ body, html {
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">À PROPOS</a>
     <a href="#musictherapy" class="w3-bar-item w3-button" onclick="toggleFunction()">MUSICOTHÉRAPIE</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
   </div>
 </div>
 
@@ -93,10 +90,10 @@ body, html {
 	<span class="w3-condensed"> - Musicothérapeute, MTA</span></span>
 
     	<span class="w3-center w3-padding-large w3-black w3-xlarge w3-condensed w3-hide-large w3-hide-small w3-animate-opacity">ERIKA GUITTARD
-	<span class="w3-condensed"> - Musicothérapeute, MTA</span></span>
+	<span class="w3-condensed w3-large"> - Musicothérapeute, MTA</span></span>
 
-    	<span class="w3-center w3-padding-large w3-black w3-xlarge w3-xcondensed w3-hide-large w3-hide-medium w3-animate-opacity">ERIKA GUITTARD
-	<span class="w3-xcondensed"> - Musicothérapeute, MTA</span></span>
+    	<span class="w3-center w3-padding-large w3-black w3-large w3-xcondensed w3-hide-large w3-hide-medium w3-animate-opacity">ERIKA GUITTARD
+	<span class="w3-xcondensed w3-medium"> - Musicothérapeute, MTA</span></span>
   </div>
 </div>
 
@@ -128,7 +125,11 @@ body, html {
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min" id="musictherapy">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">MUSICOTHÉRAPIE</span>
+    <span class="w3-xxxlarge w3-text-white w3-wide w3-hide-small w3-hide-medium">MUSICOTHÉRAPIE</span>
+    <span class="w3-xxlarge w3-text-white w3-wide w3-hide-large w3-hide-small">MUSICOTHÉRAPIE</span>
+    <span class="w3-xlarge w3-text-white w3-hide-large w3-hide-medium">MUSICOTHÉRAPIE</span>
+
+
   </div>
 </div>
 
@@ -143,22 +144,32 @@ body, html {
         <p class="w3-large">Approches 1</p>
         <p>Une approche centrée sur l'apprentissage et le développement personnel</p>
         <p><a href="#disciplines" class="w3-block w3-button w3-dark-grey"> Trouver une formation</a></p>
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
       </div>
       <div class="w3-third">
         <i class="fa fa-medkit w3-margin-bottom w3-jumbo"></i>
         <p class="w3-large"> Approches 2</p>
         <p>Je suis un artiste expert et je souhaite partager mon processus</p>
         <p><a href="mailto:touspourart@gmail.com" class="w3-block w3-button w3-dark-grey"> Proposer mes services</a></p>
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
       </div>
       <div class="w3-third">
         <i class="fa fa-commenting w3-margin-bottom w3-jumbo"></i>
         <p class="w3-large">Approches 3</p>
         <p>Rejoignez la communauté et discutez de vos projets et votre parcours</p>
         <p><a href="mailto:touspourart@gmail.com" class="w3-block w3-button w3-dark-grey"> Discuter</a></p>
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
       </div>
     </div>
-<hr>
-
+      		<div class="w3-hide-small">
+		<hr>
+		</div>
 
 
 
@@ -171,20 +182,35 @@ body, html {
   <div class="w3-row-padding w3-center w3-opacity-min w3-grayscale-min">
     <div class="w3-col m3">
       <img src="images/strat.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains"><p>TEXT
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
     </div>
 
     <div class="w3-col m3">
       <img src="images/banjo.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans"><p>TEXT
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
     </div>
 
     <div class="w3-col m3">
       <img src="images/lapsteel.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup"><p>TEXT
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
     </div>
 
     <div class="w3-col m3">
       <img src="images/classic.jpg" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean"><p>TEXT
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
     </div>
   </div>
+      		<div class="w3-hide-small">
+		<hr>
+		</div>
 
 <!-- Modal for full size images on click-->
 <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
@@ -229,7 +255,7 @@ body, html {
 </div>
 
 
-
+<hr>
 </div>
 
 
@@ -237,7 +263,7 @@ body, html {
 <!-- Pricing Section -->
 <div class="w3-container w3-center" style="padding:16px 10%" id="pricing">
   <h3 class="w3-center">TARIFS</h3>
-  <p class="w3-large">Choisissez votre laissez passer et débutez dès aujourd'hui</p>
+  <p class="w3-center"><em>Choisissez votre laissez passer et débutez dès aujourd'hui</em></p>
   <div class="w3-row-padding" style="margin-top:32px">
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
@@ -253,7 +279,11 @@ body, html {
 
         </li>
       </ul>
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
     </div>
+
     <div class="w3-third">
       <ul class="w3-ul w3-white w3-hover-shadow">
         <li class="w3-red w3-xlarge w3-padding-48">Indivuduel</li>
@@ -267,7 +297,11 @@ body, html {
         <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
         </li>
       </ul>
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
     </div>
+
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
         <li class="w3-dark-gray w3-xlarge w3-padding-32">En groupe</li>
@@ -281,9 +315,15 @@ body, html {
         <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
         </li>
       </ul>
+      		<div class="w3-hide-large w3-hide-medium">
+		<hr>
+		</div>
     </div>
+
   </div>
-  <hr>
+      		<div class="w3-hide-small">
+		<hr>
+		</div>
 </div>
 <br>
 <br>
@@ -299,14 +339,19 @@ body, html {
 
 
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="contact">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+    <span class="w3-xxxlarge w3-text-white w3-wide w3-hide-small w3-hide-medium">CONTACT</span>
+    <span class="w3-xxlarge w3-text-white w3-wide w3-hide-large w3-hide-small">CONTACT</span>
+    <span class="w3-xlarge w3-text-white w3-hide-large w3-hide-medium">CONTACT</span>
+
+
+
   </div>
 </div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
+<div class="w3-content w3-container w3-padding-64">
   <h3 class="w3-center">RENDEZ-VOUS</h3>
   <p class="w3-center"><em>Pour prendre rendez-vous</em></p>
 
@@ -324,7 +369,6 @@ body, html {
 </div>
 
 <div class="w3-center w3-grayscale-min">
-<hr style="text-align:center;width=100%;">
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d357577.8178832502!2d-73.992055!3d45.5588402!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a541c64b70d%3A0x654e3138211fefef!2zTW9udHLDqWFsLCBRQw!5e0!3m2!1sfr!2sca!4v1678565439819!5m2!1sfr!2sca" width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
@@ -336,7 +380,6 @@ body, html {
 
 
 <div class="w3-center w3-grayscale-min">
-<hr style="text-align:center;width=100%;">
 	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d763.6284114385134!2d-73.61320556821087!3d45.5395467731828!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc919151c25d471%3A0x38761d1f9b5c6f3!2s600%20Rue%20Jean-Talon%20E%20suite%20210%2C%20Montreal%2C%20QC%20H2R%203A8%2C%20Canada!5e0!3m2!1sen!2sus!4v1676855734988!5m2!1sen!2sus" width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 -->
