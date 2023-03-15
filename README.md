@@ -1,1 +1,1 @@
-# Erika Guittard - Musicpthérapeute MTA
+# Erika Guittard - Musicpthérapeute, MTA
