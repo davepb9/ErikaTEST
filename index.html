@@ -29,6 +29,91 @@ body, html {
   width: 20%;
 }
 
+/* _______________________SLIDESHOW _________________ Hide the images by default */
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.w3-container {
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 25px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 16px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 1em;
+}
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.5;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
 .fa-beat-hover:hover {
   -webkit-animation-name: fa-beat;
           animation-name: fa-beat;
@@ -738,72 +823,93 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 
 <!-- Container INSTRUMENTS -->
-<div class=" w3-container" style="padding:60px 10%">
-  	<h3 class="w3-center">INSTRUMENTS</h3>
-  	<p class="w3-center"><em>Les instruments privilégiés dans ma pratique</em></p><br>
 
-    <div class="w3-cell-row w3-center w3-opacity-min w3-grayscale-min">
-    	<div class="w3-cell scroll-reveal animate left2">
-      	 <img src="images/classical.png" style="width:34.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="La Guitare">
-    	</div>
+<!-- Container (Discipline Section) -->
+<div class="w3-content">
+<h3 style="text-align:center"><em>Choisir un atelier qui vous allume</em></h3><br>
+<div class="w3-container w3-padding-16" style="margin-left:10%; margin-right:10%">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <!--LIEN ICI VERS AUTRE PAGE HTML-->
+        <a href="index.html">
+        <img src="images/7.jpg" style="width:100%"></a>
+  </div>
 
-    	<div class="w3-cell scroll-reveal animate left">
-      	 <img src="images/piano.png" style="width:66.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Piano">
-    	</div>
-
-    	<div class="w3-cell scroll-reveal animate right">
-      	 <img src="images/bodhran.png" style="width:54%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Bodhran">
-    	</div>
-
-    	<div class="w3-cell scroll-reveal animate right2">
-      	 <img src="images/sing.jpg" style="width:43.33%" onclick="onClick(this)" class="w3-hover-opacity" alt="La voix">
-    	</div>
- </div>
-
-    <div class="w3-cell-row w3-center w3-opacity-min w3-grayscale-min">
-    	<div class="w3-cell scroll-reveal animate left2">
-      	 <img src="images/ukulele1.png" style="width:45.90%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Ukulele">
-    	</div>
-
-    	<div class="w3-cell scroll-reveal animate left">
-      	 <img src="images/percussions.png" style="width:106%" onclick="onClick(this)" class="w3-hover-opacity" alt="Les Percussions">
-    	</div>
-
-    	<div class="w3-cell scroll-reveal animate right">
-      	 <img src="images/kalimba.png" style="width:66.8%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Kalimba">
-    	</div>
-
-    	<div class="w3-cell scroll-reveal animate right2">
-      	 <img src="images/xylophone.png" style="width:70.5%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Xylophone">
-    	</div>
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <!--LIEN ICI VERS AUTRE PAGE HTML-->
+        <a href="index.html">
+        <img src="images/8.jpg" style="width:100%"></a>
     </div>
 
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <!--LIEN ICI VERS AUTRE PAGE HTML-->
+        <a href="index.html">
+        <img src="images/7.jpg" style="width:100%"></a>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <!--LIEN ICI VERS AUTRE PAGE HTML-->
+        <a href="index.html">
+        <img src="images/8.jpg" style="width:100%"></a>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <!--LIEN ICI VERS AUTRE PAGE HTML-->
+        <a href="index.html">
+        <img src="images/7.jpg" style="width:100%"></a>  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <!--LIEN ICI VERS AUTRE PAGE HTML-->
+        <a href="index.html">
+        <img src="images/8.jpg" style="width:100%"></a>  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
 
 
 
-</div>
 
 
-
-
-<!-- Modal for full size images on click
- <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  	<span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    	<img id="img01" class="w3-image">
-    	<p id="caption" class="w3-opacity w3-large"></p>
-    </div>
- </div>
+<!-- Container CAPTION TEXT Entre les deux ci-nécéssaire 
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
 -->
 
 
 
 
-
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/7.jpg" style="width:100%" onclick="currentSlide(1)" alt="Aquarelle avec Minette Pinceu-Bleue">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/8.jpg" style="width:100%" onclick="currentSlide(2)" alt="Grattage de corde avec Frais Piednue">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/7.jpg" style="width:100%" onclick="currentSlide(3)" alt="Posture parfaite en montage avec Chemisette Ligné">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/8.jpg" style="width:100%" onclick="currentSlide(4)" alt="Gérer ses écrans pour la photo avec Content Lemonsieur">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/7.jpg" style="width:100%" onclick="currentSlide(5)" alt="Exploiter le silence et la solitude avec Donturn Yourback">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/8.jpg" style="width:100%" onclick="currentSlide(6)" alt="Comment refaire son mur à l'aquarelle Contente Dêtrelà">
+    </div>
+  </div>
+  <hr>
+</div>
+<br>
 <br>
 <br>
 </div>
-
 
 
 
@@ -970,19 +1076,41 @@ document.addEventListener("DOMContentLoaded", printSteps);
 
 
 
+
 <script>
+//slide show
+var slideIndex = 1;
+showSlides(slideIndex);
 
-
-
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
+<script>
 
 // SQUARE ANIMATION Numero 1 - Remove the transition class
 const square = document.querySelector('.square');
