@@ -10,13 +10,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-
-
-
-
-
     
 <style>
+*, :after, :before {
+    box-sizing: border-box;
+}
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
@@ -24,6 +22,11 @@ body, html {
   line-height: 1.8;
   text-align: justify;
   text-justify: inter-word;
+}
+
+.columnA {
+  float: left;
+  width: 20%;
 }
 
 .fa-beat-hover:hover {
@@ -197,7 +200,9 @@ body, html {
 }
 
 .animate{
-    transition: transform 0.5s, opacity 0.5s;
+  position: auto;
+  margin: 0 auto;
+  transition: transform 0.5s, opacity 0.5s;
 }
 .animate.left{
     transform: translateX(-10em);
@@ -205,13 +210,13 @@ body, html {
 }
 
 .animate.left2{
-    transform: translateX(-10em);
+    transform: translateX(-5em);
     opacity: 0;
     transition: transform 1s;
 }
 
 .animate.right2{
-    transform: translateX(10em);
+    transform: translateX(5em);
     opacity: 0;
     transition: transform 1s;
 }
@@ -241,6 +246,11 @@ body, html {
     opacity: 0;
     transition: transform 2s, opacity 2s;
 }
+.animate.fadeslow{
+    transform: translateY(-0em) scaleX(1);
+    opacity: 0;
+    transition: transform 5s, opacity 2s;
+}
 .animate.active{
     transform: translateX(0);
     opacity: 1;
@@ -249,6 +259,142 @@ body, html {
 .loader{
     text-align: center;
 }
+
+
+
+
+
+
+/* TIMELINE */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+:root {
+  --progress: 0%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  background-color: #D3D3D3;
+  width: 100%;
+  height: 1px;
+  position: relative;
+  align-items: center;
+}
+.line .step-parent {
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  width: fit-content;
+  height: 120px;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateX(-50%);
+}
+
+/* INITIAL ---------------- */
+.line .step-parent .step-title {
+  width: max-content;
+  color: white;
+  cursor: pointer;
+  padding: 1px;
+  text-transform: uppercase;
+  padding: 10px;
+  user-select: none;
+  border-radius: 20px;
+  background-color: #D3D3D3;
+  Text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .line .step-parent .step-title {
+    transform: scale(0.95, 1);
+  }
+}
+@media screen and (max-width: 900px) {
+  .line .step-parent .step-title {
+    transform: scale(0.9, 1);
+  }
+}
+@media screen and (max-width: 800px) {
+  .line .step-parent .step-title {
+    transform: scale(0.85, 1);
+  }
+}
+@media screen and (max-width: 700px) {
+  .line .step-parent .step-title {
+    transform: scale(0.8, 1);
+  }
+}
+
+
+
+.line .step-parent .step-title.passed {
+  color: black;
+  position: relative;
+}
+
+/* AFTER ---------------- */
+.line .step-parent .step-title.passed::after {
+  animation: height-expand 0.2s linear forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #A9A9A9;
+  z-index: -1;
+  border-radius: 15px;
+  content: "";
+}
+
+.active-line {
+  background-color: black;
+  width: var(--progress);
+  height: 1px;
+  position: relative;
+}
+
+.step {
+  background-color: #D3D3D3;
+  width: 10px;
+  cursor: pointer;
+  height: 10px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+.step.active {
+  background-color: black;
+}
+.step.active.current {
+  transform: scale(2) translateY(-25%);
+}
+.step.active span {
+  background-color: white;
+}
+.step span {
+  background-color: #646464;
+  transform: translate(-10%, -150%);
+  position: absolute;
+  padding: 3px;
+  border-radius: 5px;
+}
+@keyframes height-expand {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+ 
+
 
 
 
@@ -361,7 +507,7 @@ body, html {
 	<div class="square-wrapper">
 	<div class="square square-transition">
 
-	<p class="w3-center"><strong>Aucune connaissance en musique n’est nécessaire pour consulter; en musicothérapie, il n’y a pas de “fausse note”.</strong></p>
+	<p class="w3-center"><strong>En musicothérapie, il n’y a pas de “fausse note” ; aucune connaissance en musique n’est nécessaire pour consulter.</strong></p>
 	<hr>
   	</div>
   	</div>
@@ -405,13 +551,56 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 </div>
 
 
-<!-- Container APPROCHES -->
+<!-- Container DÉROULEMENT -->
+<div class="w3-content w3-container w3-padding-64">
+  	<h3 class="w3-center">DÉROULEMENT</h3>
+  	<p class="w3-center"><em>Le déroulement des étapes en musicothérapie</em></p>
+ <div class=" scroll-reveal animate bottom">
+  <div class="w3-row w3-row-padding" style="padding: 0; margin: 8px; text-align:center">
+	<div class="columnA">
+      	 <p>- 1 -</p>
+    	</div>
+	<div class="columnA">
+      	 <p>- 2 -</p>
+    	</div>
+	<div class="columnA">
+      	 <p>- 3 -</p>
+    	</div>
+	<div class="columnA">
+      	 <p>- 4 -</p>
+    	</div>
+	<div class="columnA">
+      	 <p>- 5 -</p>
+    	</div>
+ </div>
+
+<div class="w3-container" style="padding:0; margin-bottom: 120px">
+
+    <div class="w3-row-padding container">
+      <div class="line">
+        <div class="active-line"></div>
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="w3-content w3-container w3-padding-32 scroll-reveal animate fadeslow">
+  	<p class="w3-justify">Les premières rencontres servent généralement à apprendre à connaître le client, à tisser un lien thérapeutique, et à identifier les objectifs sur lesquels porteront le travail musicothérapeutique (évaluation). Puis, la thérapeute et le client, ensemble, vont décider d’un ou plusieurs objectifs à viser, et sur cette base-là, la thérapeute proposera des interventions musicales pour venir soutenir ce travail (traitement). L’avancement, les progrès du travail thérapeutique réalisé seront réévalués lorsque nécessaire, et lorsque les objectifs seront atteints ou qu’une amélioration suffisante sera observée, la thérapie pourra être résumée et un sommaire sera rédigé par la thérapeute (terminaison). </p>
+
+</div>
+</div>
+<hr>
+
+
+
+
+<!-- Container INTERVENTIONS -->
 <div class="w3-container" style="padding:60px 10%">
-  <h3 class="w3-center">TYPES D'INTERVENTIONS</h3>
+  <h3 class="w3-center">EXEMPLES D'INTERVENTIONS</h3>
     <div class="w3-row-padding w3-center" style="margin-top:64px">
 
       <div class="w3-third scroll-reveal animate left">
-        <i class="fa-regular fa-headphones-simple w3-margin-bottom w3-jumbo w3-center fa-beat-hover" style="--fa-beat-scale: 1.5; --fa-animation-duration: 1s;"></i>
+        <i class="fa-regular fa-headphones w3-margin-bottom w3-jumbo w3-center fa-beat-hover" style="--fa-beat-scale: 1.5; --fa-animation-duration: 1s;"></i>
         <p class="w3-large">Écoute</p>
         <p>Écoutes de pièces musicales, <br>Analyses des paroles</p>
       		<div class="w3-hide-large w3-hide-medium">
@@ -472,80 +661,54 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 
 
-<!-- Container DÉROULEMENT -->
-<div class="w3-content w3-container w3-padding-64 scroll-reveal animate fadefast">
-  	<h3 class="w3-center">DÉROULEMENT</h3>
-  	<p class="w3-center"><em>A quoi ça ressemble :</em></p>
-  	<p class="w3-justify">Les premières rencontres servent généralement à apprendre à se connaître, à tisser un lien thérapeutique, et à identifier les objectifs sur lesquels porteront le travail thérapeutique (évaluation). Puis, la thérapeute et le client, ensemble, vont décider d’un ou plusieurs objectifs à viser, et sur cette base-là, la thérapeute proposera des interventions musicales pour venir soutenir ce travail-là (traitement). L’avancement, les progrès du travail thérapeutique réalisé seront réévalués lorsque nécessaire, et lorsque les objectifs seront atteints ou qu’une amélioration suffisante sera observée, la thérapie pourra être résumée et un sommaire sera rédigé par la thérapeute (terminaison). </p>
-
-
-
-
-  <div class="w3-row-padding w3-center">
-
-   <div class="w3-col m4">  
-  	<li>Coffeedfsdfsd</li>
-  	<li>Teafdfsdfsd</li>
-  	<li>CocaColafdsfsdf</li>
-   </div>
-
-   <div class="w3-col m4">  
-  	<li>Coffeedfsdfsd</li>
-  	<li>Teafdfsdfsd</li>
-  	<li>CocaColafdsfsdf</li>
-   </div>
-
-   <div class="w3-col m4">  
-  	<li>Coffeedfsdfsd</li>
-  	<li>Teafdfsdfsd</li>
-  	<li>CocaColafdsfsdf</li>
-   </div>
-  </div>
-
-
-  <hr>
-</div>
 
 
 <!-- Container INSTRUMENTS -->
-<div class="w3-content w3-container w3-padding-64">
+<div class="w3-content w3-container" style="padding:60px 10%">
   	<h3 class="w3-center">INSTRUMENTS</h3>
-  	<p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+  	<p class="w3-center"><em>Les instruments privilégiés dans ma pratique</em></p><br>
 
-    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-    <div class="w3-row-padding w3-center w3-opacity-min w3-grayscale-min">
-    	<div class="w3-col m3 scroll-reveal animate left2">
-      	 <img src="images/classical.png" style="width:34.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="La Guitare"><p>La Guitare et les instruments à cordes pincées</p>
-      		<div class="w3-hide-large w3-hide-medium">
-		<hr>
-		</div>
+    <div class="w3-cell-row w3-center w3-opacity-min w3-grayscale-min">
+    	<div class="w3-cell scroll-reveal animate left2">
+      	 <img src="images/classical.png" style="width:34.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="La Guitare">
     	</div>
 
-    	<div class="w3-col m3 scroll-reveal animate left">
-      	 <img src="images/piano.png" style="width:66.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Piano"><p>Le Piano et les instruments à cordes frappées</p>
-      		<div class="w3-hide-large w3-hide-medium">
-		<hr>
-		</div>
+    	<div class="w3-cell scroll-reveal animate left">
+      	 <img src="images/piano.png" style="width:66.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Piano">
     	</div>
 
-    	<div class="w3-col m3 scroll-reveal animate right">
-      	 <img src="images/bodhran.png" style="width:54%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Bodhran"><p>Le Bodhran et les percussions</p>
-      		<div class="w3-hide-large w3-hide-medium">
-		<hr>
-		</div>
+    	<div class="w3-cell scroll-reveal animate right">
+      	 <img src="images/bodhran.png" style="width:54%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Bodhran">
     	</div>
 
-    	<div class="w3-col m3 scroll-reveal animate right2">
-      	 <img src="images/sing.jpg" style="width:43.33%" onclick="onClick(this)" class="w3-hover-opacity" alt="La voix"><p>La voix</p>
-      		<div class="w3-hide-large w3-hide-medium">
-		<hr>
-		</div>
+    	<div class="w3-cell scroll-reveal animate right2">
+      	 <img src="images/sing.jpg" style="width:43.33%" onclick="onClick(this)" class="w3-hover-opacity" alt="La voix">
+    	</div>
+ </div>
+
+    <div class="w3-cell-row w3-center w3-opacity-min w3-grayscale-min">
+    	<div class="w3-cell scroll-reveal animate left2">
+      	 <img src="images/classical.png" style="width:34.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="La Guitare">
+    	</div>
+
+    	<div class="w3-cell scroll-reveal animate left">
+      	 <img src="images/piano.png" style="width:66.67%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Piano">
+    	</div>
+
+    	<div class="w3-cell scroll-reveal animate right">
+      	 <img src="images/bodhran.png" style="width:54%" onclick="onClick(this)" class="w3-hover-opacity" alt="Le Bodhran">
+    	</div>
+
+    	<div class="w3-cell scroll-reveal animate right2">
+      	 <img src="images/sing.jpg" style="width:43.33%" onclick="onClick(this)" class="w3-hover-opacity" alt="La voix">
     	</div>
     </div>
+
+
+
+
 </div>
-      		<div class="w3-hide-small">
-		<hr>
-		</div>
+
 
 
 
@@ -563,70 +726,6 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 
 
-<!-- Pricing Section -->
-<div class="w3-container w3-center" style="padding:16px 10%" id="pricing">
-  	<h3 class="w3-center">TARIFS</h3>
-  	<p class="w3-center"><em>Choisissez votre laissez passer et débutez dès aujourd'hui</em></p>
-  <div class="w3-row-padding" style="margin-top:32px">
-     <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-dark-gray w3-xlarge w3-padding-32">En Ligne</li>
-        <li class="w3-padding-16"><b>Par séance</b></li>
-        <li class="w3-padding-16">À la carte</li>
-        <li class="w3-padding-16">fdfgdfgsfd</li>
-          <h2 class="w3-wide">$ 100</h2>
-          <span class="w3-opacity">pour 1 heure</span>
-
-        <li class="w3-light-grey w3-padding-24">
-        <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
-        </li>
-      </ul>
-      		<div class="w3-hide-large w3-hide-medium">
-		<hr>
-		</div>
-    </div>
-
-    <div class="w3-third">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-red w3-xlarge w3-padding-48">Indivuduel</li>
-        <li class="w3-padding-16"><b>Séances et suivi</b></li>
-        <li class="w3-padding-16"><b>Chaque semaine</b></li>
-        <li class="w3-padding-16">De 4 à 16 semaines</li>
-          <h2 class="w3-wide">$ 400</h2>
-          <span class="w3-opacity">par mois</span>
-
-        <li class="w3-light-grey w3-padding-24">
-        <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
-	</li>
-      </ul>
-      		<div class="w3-hide-large w3-hide-medium">
-		<hr>
-		</div>
-    </div>
-
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-dark-gray w3-xlarge w3-padding-32">En groupe</li>
-        <li class="w3-padding-16">Séances et suivi</li>
-        <li class="w3-padding-16">Chaque semaine</li>
-        <li class="w3-padding-16">De 4 à 16 semaines</li>
-          <h2 class="w3-wide">$ 200</h2>
-          <span class="w3-opacity">par mois</span>
-
-        <li class="w3-light-grey w3-padding-24">
-        <a href="mailto:mail@gmail.com" class="w3-button w3-black w3-padding-large">S'inscrire</a>
-	</li>
-      </ul>
-      		<div class="w3-hide-large w3-hide-medium">
-		<hr>
-		</div>
-    </div>
-
-  </div>
-      		<div class="w3-hide-small">
-		<hr>
-		</div>
-</div>
 <br>
 <br>
 </div>
@@ -650,20 +749,20 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64">
   	<h3 class="w3-center">RENDEZ-VOUS</h3>
-  	<p class="w3-center scroll-reveal intro-text"><em>N'hésitez pas à me joindre, merci!</em></p>
+  	<p class="w3-center scroll-reveal intro-text"><em>N'hésitez pas à me joindre!</em></p>
 
   <div class="w3-row w3-padding-32 w3-section w3-center">
 
 
     	<a style="text-decoration:none" href="tel:514-431-8054" class="fa fa-mobile-screen fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Phone 514-431-8054"></a>
-	<a style="text-decoration:none" href="tel:514-431-8054"</a>(514) 431-8054<br>
+	<a style="text-decoration:none; width:215px; text-align:left" href="tel:514-431-8054" class="w3-hover-text-black w3-button">(514) 431-8054</a><br>
 
      	<a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-regular fa-envelope fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="musicotherika@gmail.com"></a>
-	<a style="text-decoration:none" href="mailto:musicotherika@gmail.com"</a>musicotherika@gmail.com<br>
+	<a style="text-decoration:none; width:215px; text-align:left" href="mailto:musicotherika@gmail.com" class="w3-hover-text-black w3-button">musicotherika@gmail.com</a><br>
 
 
      	<a style="text-decoration:none" https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1" class="fa fa-location-dot fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Montreal Map"></a>
-	<a style="text-decoration:none" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1"</a>911, Jean-Talon Est, Montréal<br>
+	<a style="text-decoration:none; width:215px; text-align:left" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1"  class="w3-hover-text-black  w3-button">911, Jean-Talon Est, Montréal</a><br>
 	<br>
      <div class="w3-center w3-grayscale-min">
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.4211732242283!2d-73.61347376755522!3d45.541490952466766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91915796f7577%3A0xb45591d8dd8656fb!2sMaison%20de%20la%20culture%20Claude-L%C3%A9veill%C3%A9e!5e0!3m2!1sfr!2sca!4v1694458557982!5m2!1sfr!2sca" width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -686,7 +785,81 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 </footer>
  
+
 <script>
+"use strict";
+const steps = [
+    {
+        title: "Évaluation <br> des <br>besoins"
+    },
+    {
+        title: "Définition <br> des <br>objectifs"
+    },
+    {
+        title: "Traitement : <br> interventions <br> musicales"
+    },
+    {
+        title: "Évaluation <br> des <br>progrès"
+    },
+    {
+        title: "Bilan <br>et <br> terminaison"
+    }
+];
+const createStepElement = (step) => {
+    const stepParent = document.createElement("div");
+    stepParent.classList.add("step-parent");
+    const stepCircle = document.createElement("div");
+    stepCircle.classList.add("step");
+    const prct = `${(steps.indexOf(step) + 1 / 2) * (100 / steps.length)}%`;
+    stepParent.style.left = prct;
+    const stepTitle = document.createElement("div");
+    stepTitle.innerHTML = step.title;
+    stepTitle.classList.add("step-title");
+    stepParent.appendChild(stepTitle);
+    stepParent.appendChild(stepCircle);
+    return stepParent;
+};
+const activateStep = (stepParent) => {
+    const clickedStep = stepParent.querySelector(".step");
+    document.querySelectorAll(".step").forEach((step) => {
+        step.classList.remove("active", "current");
+    });
+    clickedStep.classList.add("active", "current");
+    document.querySelectorAll(".step").forEach((step) => {
+        if (parseInt(step.parentNode.style.left) <= parseInt(stepParent.style.left)) {
+            step.classList.add("active");
+            step.parentNode.querySelector(".step-title").classList.add("passed");
+        }
+        else {
+            step.classList.remove("active");
+            step.parentNode.querySelector(".step-title").classList.remove("passed");
+        }
+    });
+    document.body.style.setProperty("--progress", stepParent.style.left);
+};
+const addStepEventListeners = (stepParent) => {
+    stepParent.addEventListener("click", ({ currentTarget }) => {
+        activateStep(currentTarget);
+    });
+};
+const printSteps = () => {
+    const container = document.querySelector(".line");
+    steps.forEach((step) => {
+        const stepElement = createStepElement(step);
+        addStepEventListeners(stepElement);
+        container.appendChild(stepElement);
+    });
+};
+document.addEventListener("DOMContentLoaded", printSteps);
+</script>
+
+
+
+<script>
+
+
+
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -791,6 +964,10 @@ function toggleFunction() {
     }
 }
 </script>
+
+
+
+
 
 </body>
 </html>
