@@ -104,6 +104,51 @@ body, html {
           animation-timing-function: var(--fa-animation-timing, ease-in-out); 
 }
 
+
+.fa-flip-logo {
+  -webkit-animation-name: fa-flip;
+  animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+  animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+  animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s); /* Default animation duration */
+  animation-duration: var(--fa-animation-duration, 1s); /* Default animation duration */
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+  animation-timing-function: var(--fa-animation-timing, linear);
+
+  /* Define a custom animation with infinite repeat and pause between repetitions */
+  -webkit-animation: infiniteAlternate 4s infinite; /* Total duration is 3 seconds */
+  animation: infiniteAlternate 4s infinite; /* Total duration is 3 seconds */
+}
+
+@keyframes infiniteAlternate {
+  0%, 100% {
+    /* Your starting and ending styles here */
+    opacity: 1;
+    transform: rotateY(0deg); /* No rotation at the beginning and end */
+  }
+
+  0%, 100% {
+    /* Your starting and ending styles here */
+    opacity: 1;
+    transform: rotateY(0deg); /* No rotation at the beginning and end */
+  }
+
+  25%, 50% {
+    /* 25% to 75% is the pause duration (2 second in a 5-second animation) */
+    opacity: 0.8;
+    transform: rotateY(0deg); /* No rotation during the pause */
+  }
+  75% {
+    /* Your intermediate styles here */
+    opacity: 0.5;
+    transform: rotateY(180deg); /* Rotate 180 degrees on the Y-axis */
+  }
+}
+
+
+
 .fa-shake-hover:hover {
   -webkit-animation-name: fa-shake;
           animation-name: fa-shake;
@@ -527,7 +572,7 @@ body, html {
  <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large scroll-reveal animate left">
 
-      <p><b><i class="fa-regular fa-user w3-margin-right"></i>Erika Guittard, MTA</b></p><br>
+      <p><b><img src="logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="30px" height="100%"></i>&nbsp; Erika Guittard, MTA</b></p><br>
       <img src="images/erika1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo 1" width="265" height="100%">
     </div>
 
@@ -805,9 +850,17 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 <footer class="w3-center w3-black w3-padding-64 w3-opacity">
   	<a href="#accueil" class="w3-button w3-light-grey"><i class="fa fa-up-long w3-margin-right"></i>Retour en haut</a>
 	<p>
-<div class="a" style="font-size:11px">© 2023 Tous droits réservés
-<br>
-<br>
+
+<div class="w3-content w3-cell-row" style="max-width:600px;">
+	<div class="w3-cell">
+
+	<div class="a" style="font-size:11px">
+	<img src="logo.png" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear;" width="20px" height="100%"> &nbsp; Erika Guittard, MTA  &nbsp; &nbsp; © &nbsp; 2023 &nbsp; Tous droits réservés
+	</div>
+	</div>
+	</div>
+
+
 
    <div class="w3-xlarge w3-section w3-center w3-black">
      	<a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-xl fa fa-envelope fa-fw w3-hover-opacity" title="E-mail musicotherika@gmail.com"></a>
