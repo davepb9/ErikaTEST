@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <title>Erika Guittard - Musicothérapeute</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-<link rel="shortcut icon" href="logo.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
     
 <style>
 *, :after, :before {
@@ -22,6 +20,7 @@ body, html {
   line-height: 1.8;
   text-align: justify;
   text-justify: inter-word;
+  overflow-x: clip;
 }
 
 .columnA {
@@ -87,9 +86,9 @@ img {
 /* Container for image text */
 .caption-container {
   text-align: center;
-  background-color: #222;
+  background-color: transparent;
   padding: 2px 16px;
-  color: white;
+  color: transparent;
 }
 
 .row:after {
@@ -306,7 +305,7 @@ img {
 
 .square-transition {
     opacity: 1;
-    transform: translateX(1em);;
+    transform: translateX(1em);
 }
 
 
@@ -330,7 +329,7 @@ img {
 }
 
 .animate{
-  position: auto;
+  position: relative;
   margin: 0 auto;
   transition: transform 0.5s, opacity 0.5s;
 }
@@ -388,6 +387,14 @@ img {
     transition: transform 0.5s;
 }
 
+/* For small screens (e.g., screens with a maximum width of 320px), override the animation styles */
+@media (max-width: 380px) {
+    .animate.skewleft {
+        transform: none; /* Reset the transform properties */
+        opacity: 1; /* Make it fully visible */
+        transition: none; /* Remove any transition */
+    }
+}
 
 .animate.active{
     transform: translateX(0);
@@ -400,6 +407,44 @@ img {
 
 
 
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Apply a column layout for screens 400px and smaller */
+  @media screen and (max-width: 400px) {
+    .icon-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+/* CUSTOM HIDE FOR EXTRA SMALL DEVICES */
+@media (max-width: 335px) {
+  .w3-hide-xsmall {
+    display: none !important;
+  }
+}
+
+
+      @media (max-width: 768px) {
+        .custom-container {
+          padding: 0; /* Remove padding for small screens */
+        }
+      }
+      
+      /* Override styles for custom-container on larger screens */
+      @media (min-width: 769px) {
+        .custom-container {
+          padding: 60px 10%;
+      max-width: 1400px; /* Adjust the maximum width as needed */
+      margin-left: auto;
+      margin-right: auto; /* Center the container horizontally */
+        }
+      }
 
 
 
@@ -469,7 +514,51 @@ img {
     transform: scale(0.8, 1);
   }
 }
-
+@media screen and (max-width: 600px) {
+  .line .step-parent .step-title {
+    transform: scale(0.75, 1);
+  }
+}
+@media screen and (max-width: 525px) {
+  .line .step-parent .step-title {
+    transform: scale(0.7, 1);
+  }
+}
+@media screen and (max-width: 484px) {
+  .line .step-parent .step-title {
+    transform: scale(0.65, 1);
+  }
+}
+@media screen and (max-width: 460px) {
+  .line .step-parent .step-title {
+    transform: scale(0.6, 1);
+  }
+}
+@media screen and (max-width: 425px) {
+  .line .step-parent .step-title {
+    transform: scale(0.55, 1);
+  }
+}
+@media screen and (max-width: 395px) {
+  .line .step-parent .step-title {
+    transform: scale(0.5, 1);
+  }
+}
+@media screen and (max-width: 395px) {
+  .line .step-parent .step-title {
+    transform: scale(0.5, 1);
+  }
+}
+@media screen and (max-width: 360px) {
+  .line .step-parent .step-title {
+    transform: scale(0.45, 1);
+  }
+}
+@media screen and (max-width: 330px) {
+  .line .step-parent .step-title {
+    transform: scale(0.4, 1);
+  }
+}
 
 
 .line .step-parent .step-title.passed {
@@ -573,7 +662,7 @@ img {
 .w3-hover-opacity {cursor: pointer;}
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
+@media only screen and (max-width: 320px) {
   .bgimg-1 {
     background-attachment: scroll;
     min-height: 400px;
@@ -581,7 +670,7 @@ img {
 }
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
+@media only screen and (max-width: 320px) {
   .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
     min-height: 25%;
@@ -596,23 +685,23 @@ img {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
-    	 <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+    	 <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-left" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       	 <i class="fa fa-bars"></i>
     	 </a>
     	 <a href="#accueil" class="w3-bar-item w3-button">ACCUEIL</a>
     	 <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> À PROPOS</a>
     	 <a href="#musictherapy" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-institution"></i> MUSICOTHÉRAPIE</a>
-    	 <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-    	 <a href="indexEN.html" class="w3-bar-item w3-button w3-right w3-hover-red">EN
+    	 <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope w3-hide-xsmall"></i> CONTACT</a>
+    	 <a href="indexEN.html" class="w3-bar-item w3-button w3-right w3-hover-red"><span class="w3-hide-xsmall">EN</span>
       	 <i class="fa fa-language"></i>
     	 </a>
   	</div>
 
   	<!-- Navbar on small screens -->
-  	<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    	<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">À PROPOS</a>
-    	<a href="#musictherapy" class="w3-bar-item w3-button" onclick="toggleFunction()">MUSICOTHÉRAPIE</a>
-    	<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  	<div id="navDemo" class="w3-left w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    	<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-user"></i>&nbsp;  À PROPOS</a>
+    	<a href="#musictherapy" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-institution"></i>&nbsp;  MUSICOTHÉRAPIE</a>
+    	<a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-envelope"></i>&nbsp;  CONTACT</a>
   </div>
 </div>
 
@@ -645,10 +734,10 @@ img {
 	<div class="square-wrapper">
 	<div class="square square-transition">
 
-	<p class="w3-center"><strong>En musicothérapie, il n’y a pas de “fausse note” ; aucune connaissance en musique n’est nécessaire pour consulter.</strong></p>
+	<p class="w3-center w3-panel"><strong>En musicothérapie, il n’y a pas de “fausse note” ; aucune connaissance en musique n’est nécessaire pour consulter.</strong></p>
+  	</div>
+  	</div>
 	<hr>
-  	</div>
-  	</div>
   </div>
 
 	<br>
@@ -657,8 +746,8 @@ img {
  <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large scroll-reveal animate left">
 
-      <p><b><img src="logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="30px" height="100%"></i>&nbsp; Erika Guittard, MTA</b></p><br>
-      <img src="images/erika1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo 1" width="265" height="100%">
+      <p><b><img src="logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="30" height="100">&nbsp; Erika Guittard, MTA</b></p><br>
+      <img src="images/erika1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo 1" width="280" height="100">
     </div>
 
 
@@ -669,27 +758,26 @@ img {
 <p>Depuis 2017, je travaille en séances individuelles auprès d’enfants sur le spectre de l’autisme et/ou présentant des déficiences intellectuelles. C'est en revanche majoritairement en santé mentale que j’exerce aujourd'hui. J’anime des séances de groupe et individuelles en centre communautaire depuis 2018.
 </p>
 J'oriente désormais ma pratique vers les personnes présentant des défis de santé mentale (anxiété, dépression, troubles de la personnalité, PTSD, etc.) mais serai ravie d’accueillir d’autres clientèles selon ma disponibilités. <a href="#contact"> Contactez-moi,</a> et il me fera plaisir d’en discuter avec vous.
-</p>
 
-	<p class="w3-center w3-cell-row">
+<p class="w3-center w3-cell-row icon-container">
 
-	<a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none" class="w3-cell">
-	<img src="images/psytoday logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="80px" height="100%">
+	<a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none" class="w3-cell w3-panel">
+	<img src="images/psytoday_logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="80" height="100">
 	</a>
 
      	<a href="https://www.linkedin.com/in/erika-guittard-8a046061" style="text-decoration:none" class="w3-cell fa-brands fa-linkedin fa-2xl w3-hover-opacity" title="Lien vers le Linkedin d'Erika"></a>
 
-	<a href="https://www.musictherapy.ca" style="text-decoration:none;" class="w3-cell">
-	<img src="images/camt logo en black.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Lien vers le site de l'Association Canadienne des musicothérapeutes" width="100px" height="100%">
+	<a href="https://www.musictherapy.ca" style="text-decoration:none;" class="w3-cell w3-panel">
+	<img src="images/camt_logo_en_black.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Lien vers le site de l'Association Canadienne des musicothérapeutes" width="100" height="100">
 	</a>
 
-	<a href="https://www.musicotherapieaqm.org" style="text-decoration:none" class="w3-cell">
-	<img src="images/AQM logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de Association des musicothérapeutes du Québec" width="80px" height="50%">
+	<a href="https://www.musicotherapieaqm.org" style="text-decoration:none" class="w3-cell w3-panel">
+	<img src="images/AQM logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de Association des musicothérapeutes du Québec" width="80" height="50">
 	</a>
 
 
 
-	</p/>
+	</p>
 
     </div>
   </div>
@@ -759,7 +847,7 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
     <div class="w3-row-padding w3-center" style="margin-top:64px">
 
       <div class="w3-third scroll-reveal animate left">
-        <i class="fa-regular fa-headphones w3-margin-bottom w3-jumbo w3-center fa-beat-hover" style="--fa-beat-scale: 1.5; --fa-animation-duration: 1s;"></i>
+        <i class="fa-solid fa-headphones-simple w3-margin-bottom w3-jumbo w3-center fa-beat-hover" style="--fa-beat-scale: 1.5; --fa-animation-duration: 1s;"></i>
         <p class="w3-large">Écoute</p>
         <p>Écoutes de pièces musicales, <br>Analyses des paroles</p>
       		<div class="w3-hide-large w3-hide-medium">
@@ -825,48 +913,51 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 <!-- Container INSTRUMENTS -->
 
 <!-- Container (Discipline Section) -->
-<div class="w3-content">
-<h3 style="text-align:center"><em>Choisir un atelier qui vous allume</em></h3><br>
-<div class="w3-container w3-padding-16" style="margin-left:10%; margin-right:10%">
+<div class="w3-container custom-container">
+
+  <h3 class="w3-center">LES INSTRUMENTS PRIVILÉGIÉS DANS MA PRATIQUE</h3>
+<div class="w3-container w3-padding-16">
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-    <!--LIEN ICI VERS AUTRE PAGE HTML-->
-        <a href="index.html">
-        <img src="images/7.jpg" style="width:100%"></a>
+    <!--		LIEN ICI VERS AUTRE PAGE HTML
+        		<a href="index.html"></a>		-->
+        <img src="images/7.jpg" style="width:100%" alt="Instrument 1">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-    <!--LIEN ICI VERS AUTRE PAGE HTML-->
-        <a href="index.html">
-        <img src="images/8.jpg" style="width:100%"></a>
+    <!--		LIEN ICI VERS AUTRE PAGE HTML
+        		<a href="index.html"></a>		-->
+        <img src="images/8.jpg" style="width:100%" alt="Instrument 2">
     </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-    <!--LIEN ICI VERS AUTRE PAGE HTML-->
-        <a href="index.html">
-        <img src="images/7.jpg" style="width:100%"></a>
+    <!--		LIEN ICI VERS AUTRE PAGE HTML
+        		<a href="index.html"></a>		-->
+        <img src="images/7.jpg" style="width:100%" alt="Instrument 3">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-    <!--LIEN ICI VERS AUTRE PAGE HTML-->
-        <a href="index.html">
-        <img src="images/8.jpg" style="width:100%"></a>
+    <!--		LIEN ICI VERS AUTRE PAGE HTML
+        		<a href="index.html"></a>		-->
+        <img src="images/8.jpg" style="width:100%" alt="Instrument 4">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">5 / 6</div>
-    <!--LIEN ICI VERS AUTRE PAGE HTML-->
-        <a href="index.html">
-        <img src="images/7.jpg" style="width:100%"></a>  </div>
+    <!--		LIEN ICI VERS AUTRE PAGE HTML
+        		<a href="index.html"></a>		-->
+        <img src="images/7.jpg" style="width:100%" alt="Instrument 5"> 
+</div>
 
   <div class="mySlides">
     <div class="numbertext">6 / 6</div>
-    <!--LIEN ICI VERS AUTRE PAGE HTML-->
-        <a href="index.html">
-        <img src="images/8.jpg" style="width:100%"></a>  </div>
+    <!--		LIEN ICI VERS AUTRE PAGE HTML
+        		<a href="index.html"></a>		-->
+        <img src="images/8.jpg" style="width:100%" alt="Instrument 6"> 
+</div>
 
   <a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
@@ -929,22 +1020,23 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64">
   	<h3 class="w3-center">RENDEZ-VOUS</h3>
-  	<p class="w3-center scroll-reveal intro-text"><em>N'hésitez pas à me joindre!</em></p>
+  	<p class="w3-center scroll-reveal intro-text"><em>N'hésitez pas à prendre rendez-vous!</em></p>
 
   <div class="w3-row w3-padding-32 w3-section w3-center">
 
 
     	<a style="text-decoration:none" href="tel:514-431-8054" class="fa fa-mobile-screen fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Phone 514-431-8054"></a>
-	<a style="text-decoration:none; width:215px; text-align:left" href="tel:514-431-8054" class="w3-hover-text-black w3-button">(514) 431-8054</a><br>
+	<a style="text-decoration:none; transform: translateY(-8px); width:215px; text-align:left" href="tel:514-431-8054" class="w3-hover-text-black w3-button">(514) 431-8054</a><br>
 
      	<a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-regular fa-envelope fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="musicotherika@gmail.com"></a>
-	<a style="text-decoration:none; width:215px; text-align:left" href="mailto:musicotherika@gmail.com" class="w3-hover-text-black w3-button">musicotherika@gmail.com</a><br>
+	<a style="text-decoration:none; transform: translateY(-8px); width:215px; text-align:left" href="mailto:musicotherika@gmail.com" class="w3-hover-text-black w3-button">musicotherika@gmail.com</a><br>
 
 
-     	<a style="text-decoration:none" https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1" class="fa fa-location-dot fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Montreal Map"></a>
-	<a style="text-decoration:none; width:215px; text-align:left" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1"  class="w3-hover-text-black  w3-button">911, Jean-Talon Est, Montréal</a><br>
+     	<a style="text-decoration:none" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1" class="fa fa-location-dot fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Montreal Map"></a>
+	<a style="text-decoration:none; transform: translateY(-8px); width:215px; text-align:left" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1"  class="w3-hover-text-black  w3-button">911, Jean-Talon Est, Montréal</a><br>
 	<br>
-     <div class="w3-center w3-grayscale-min">
+
+     <div class="w3-content w3-center w3-grayscale-min">
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.4211732242283!2d-73.61347376755522!3d45.541490952466766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91915796f7577%3A0xb45591d8dd8656fb!2sMaison%20de%20la%20culture%20Claude-L%C3%A9veill%C3%A9e!5e0!3m2!1sfr!2sca!4v1694458557982!5m2!1sfr!2sca" width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      </div>
 
@@ -961,7 +1053,7 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 	<div class="w3-cell">
 
 	<div class="a" style="font-size:11px">
-	<img src="logo.png" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear;" width="20px" height="100%"> &nbsp; Erika Guittard, MTA  &nbsp; &nbsp; © &nbsp; 2023 &nbsp; Tous droits réservés
+	<img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear;" width="20"> &nbsp; Erika Guittard, MTA  &nbsp; &nbsp; © &nbsp; 2023 &nbsp; Tous droits réservés
 	</div>
 	</div>
 	</div>
@@ -979,14 +1071,14 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 <div class="w3-cell">
 	<a href="https://www.musictherapy.ca" style="text-decoration:none;">
-	<img src="images/camt logo en.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de l'Association Canadienne des musicothérapeutes" width="150px" height="auto">
+	<img src="images/camt_logo_en.png" class="w3-panel w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de l'Association Canadienne des musicothérapeutes" width="150">
 	</a>
 </div>
 
 
 <div class="w3-cell">
 	<a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none;">
-	<img src="images/psytoday verified.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="150px" height="auto">
+	<img src="images/psytoday_verified.png" class="w3-panel w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="150">
 	</a>
    </div>
 
@@ -994,15 +1086,13 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 <div class="w3-cell">
 	<a href="https://www.musicotherapieaqm.org" style="text-decoration:none;">
-	<img src="images/AQM logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de l'Association Québécoise des musicothérapeutes" width="150px" height="auto">
+	<img src="images/AQM logo.png" class="w3-panel w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de l'Association Québécoise des musicothérapeutes" width="150">
 	</a>
 </div>
 
 </div>
 
 
-
-</div>
 
 </footer>
  
@@ -1035,6 +1125,13 @@ const createStepElement = (step) => {
     stepParent.style.left = prct;
     const stepTitle = document.createElement("div");
     stepTitle.innerHTML = step.title;
+    
+    // Set the font family here
+    stepTitle.style.fontFamily = "Lato, sans-serif";
+
+    // Reset text-transform to normal (no transformation) Otherwise it's all in CAP LOCK
+    stepTitle.style.textTransform = "none";
+
     stepTitle.classList.add("step-title");
     stepParent.appendChild(stepTitle);
     stepParent.appendChild(stepCircle);
@@ -1094,7 +1191,7 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
+  //THIS IS FOR THE CAPTION TEXT var captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -1105,7 +1202,7 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+  //THIS IS FOR THE CAPTION TEXT captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
 
@@ -1206,6 +1303,9 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+
+
 </script>
 
 
