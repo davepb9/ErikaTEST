@@ -1367,6 +1367,8 @@ const square = document.querySelector('.square');
 square.classList.remove('square-transition');
 
 // Create the observer, same as before:
+const observerOptions = 'IntersectionObserver' in window ? { passive: true } : {};
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1376,7 +1378,7 @@ const observer = new IntersectionObserver(entries => {
 
     square.classList.remove('square-transition');
   });
-});
+}, observerOptions);
 
 observer.observe(document.querySelector('.square-wrapper'));
 
