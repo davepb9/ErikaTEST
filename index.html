@@ -1171,7 +1171,18 @@ const printSteps = () => {
 document.addEventListener("DOMContentLoaded", printSteps);
 </script>
 
+    <script>
+        // JavaScript to detect Safari on iPhone
+        var isSafariOniPhone = /iPhone/.test(navigator.userAgent) && /Safari/.test(navigator.userAgent);
 
+        if (isSafariOniPhone) {
+            // Apply styles specific to Safari on iPhone
+            document.querySelectorAll('.bgimg-1, .bgimg-2, .bgimg-3').forEach(function(element) {
+                element.style.backgroundAttachment = 'scroll';
+                // You can apply additional styles here if needed
+            });
+        }
+    </script>
 
 
 <script>
@@ -1208,7 +1219,6 @@ function showSlides(n) {
 
 
 <script>
-
 // SQUARE ANIMATION Numero 1 - Remove the transition class
 const square = document.querySelector('.square');
 square.classList.remove('square-transition');
