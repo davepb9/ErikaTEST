@@ -305,7 +305,7 @@ img {
 
 .square-transition {
     opacity: 1;
-    transform: translateX(1em);
+    transform: translateX(0);
 }
 
 
@@ -414,13 +414,46 @@ img {
     align-items: center;
   }
 
-  /* Apply a column layout for screens 400px and smaller */
-  @media screen and (max-width: 400px) {
+/* Apply a column layout for screens between 750px and 600px */
+@media screen and (max-width: 750px) and (min-width: 601px) {
     .icon-container {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  }
+
+    .icon-container a {
+        margin: 0.8em 0; /* Vertical margin between elements */
+    }
+}
+
+/* Apply a column layout for screens less than 400px */
+@media screen and (max-width: 400px) {
+    .icon-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-container a {
+        margin: 0.8em 0; /* Vertical margin between elements */
+    }
+}
+
+
+
+/* SECTION DÉROULEMENT ICONES - Define a custom class for controlling the margin-top */
+.custom-margin-top {
+  margin-top: 64px;
+}
+/* Add a media query to remove margin for screens 600px or less */
+@media screen and (max-width: 600px) {
+.custom-margin-top {
+  margin-top: 0;
+}
+}
+
+
+
+
 
 /* CUSTOM HIDE FOR EXTRA SMALL DEVICES */
 @media (max-width: 335px) {
@@ -445,6 +478,57 @@ img {
       margin-right: auto; /* Center the container horizontally */
         }
       }
+
+
+/* 3 LOGOS For screens with a maximum width of 440 */
+@media screen and (max-width: 440px) {
+    .w3-cell-logo img {
+        width: 130px; /* Set a smaller width for smaller screens */
+        height: auto;
+    }
+}
+/* 3 LOGOS For screens with a maximum width of 380 */
+@media screen and (max-width: 380px) {
+    .w3-cell-logo img {
+        width: 115px; /* Set a smaller width for smaller screens */
+        height: auto;
+    }
+}
+/* 3 LOGOS For screens with a maximum width of 330 */
+@media screen and (max-width: 330px) {
+    .w3-cell-logo img {
+        width: 100px; /* Set a smaller width for smaller screens */
+        height: auto;
+    }
+}
+
+/* CONTACT-INFO TEXT Left-align when screen width is greater than 310px */
+@media screen and (min-width: 311px) {
+    .contact-info {
+        text-align: left;
+    }
+}
+/* CONTACT-INFO TEXT Center-align when screen width is 310px or smaller */
+@media screen and (max-width: 310px) {
+    .contact-info {
+        text-align: center;
+    }
+}
+
+
+
+/* Define a new class for custom font size */
+.fa-custom {
+    font-size: 2rem; /* Default size (fa-l) for screens smaller than 400px */
+}
+
+/* For screens 400px or wider */
+@media screen and (min-width: 400px) {
+    .fa-custom {
+        font-size: 2.5rem; /* fa-xl size */
+    }
+}
+
 
 
 
@@ -760,24 +844,21 @@ img {
 J'oriente désormais ma pratique vers les personnes présentant des défis de santé mentale (anxiété, dépression, troubles de la personnalité, PTSD, etc.) mais serai ravie d’accueillir d’autres clientèles selon ma disponibilités. <a href="#contact"> Contactez-moi,</a> et il me fera plaisir d’en discuter avec vous.
 
 <p class="w3-center w3-cell-row icon-container">
+    <a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none" class="w3-cell w3-panel">
+        <img src="images/psytoday_logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Psychology Today d'Erika" width="80" height="100">
+    </a>
 
-	<a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none" class="w3-cell w3-panel">
-	<img src="images/psytoday_logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="80" height="100">
-	</a>
+    <a href="https://www.linkedin.com/in/erika-guittard-8a046061" style="text-decoration:none" class="w3-cell fa-brands fa-linkedin fa-2xl w3-hover-opacity" title="Lien vers le Linkedin d'Erika"></a>
 
-     	<a href="https://www.linkedin.com/in/erika-guittard-8a046061" style="text-decoration:none" class="w3-cell fa-brands fa-linkedin fa-2xl w3-hover-opacity" title="Lien vers le Linkedin d'Erika"></a>
+    <a href="https://www.musictherapy.ca" style="text-decoration:none;" class="w3-cell w3-panel">
+        <img src="images/camt_logo_en_black.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Lien vers le site de l'Association Canadienne des musicothérapeutes" width="100" height="100">
+    </a>
 
-	<a href="https://www.musictherapy.ca" style="text-decoration:none;" class="w3-cell w3-panel">
-	<img src="images/camt_logo_en_black.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Lien vers le site de l'Association Canadienne des musicothérapeutes" width="100" height="100">
-	</a>
-
-	<a href="https://www.musicotherapieaqm.org" style="text-decoration:none" class="w3-cell w3-panel">
-	<img src="images/AQM_logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de Association des musicothérapeutes du Québec" width="80" height="50">
-	</a>
-
-
-
-	</p>
+    <a href="https://www.musicotherapieaqm.org" style="text-decoration:none" class="w3-cell w3-panel">
+        <img src="images/AQM_logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de l'Association des musicothérapeutes du Québec" width="80" height="50">
+    </a>
+</p>
+    </div>
 
     </div>
   </div>
@@ -844,7 +925,7 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 <!-- Container INTERVENTIONS -->
 <div class="w3-container" style="padding:60px 10%">
   <h3 class="w3-center">EXEMPLES D'INTERVENTIONS</h3>
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-row-padding w3-center" style="margin-top: 64px">
 
       <div class="w3-third scroll-reveal animate left">
         <i class="fa-solid fa-headphones-simple w3-margin-bottom w3-jumbo w3-center fa-beat-hover" style="--fa-beat-scale: 1.5; --fa-animation-duration: 1s;"></i>
@@ -872,7 +953,7 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
       </div>
      </div>
 
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-row-padding w3-center custom-margin-top">
 
 
       	<div class="w3-third scroll-reveal animate left">
@@ -1022,26 +1103,18 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
   	<h3 class="w3-center">RENDEZ-VOUS</h3>
   	<p class="w3-center scroll-reveal intro-text"><em>N'hésitez pas à prendre rendez-vous!</em></p>
 
-  <div class="w3-row w3-padding-32 w3-section w3-center">
+<div class="w3-row w3-padding-32 w3-section w3-center">
+    <a style="text-decoration:none" href="tel:514-431-8054" class="fa fa-mobile-screen fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Phone 514-431-8054"></a>
+    <a style="text-decoration:none; transform: translateY(-8px); width: 215px;" href="tel:514-431-8054" class="w3-hover-text-black w3-button contact-info">(514) 431-8054</a><br>
+    <a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-regular fa-envelope fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="musicotherika@gmail.com"></a>
+    <a style="text-decoration:none; transform: translateY(-8px); width: 215px;" href="mailto:musicotherika@gmail.com" class="w3-hover-text-black w3-button contact-info">musicotherika@gmail.com</a><br>
+    <a style="text-decoration:none" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1" class="fa fa-location-dot fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Montreal Map"></a>
+    <a style="text-decoration:none; transform: translateY(-8px); width: 215px;" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1" class="w3-hover-text-black w3-button contact-info">911, Jean-Talon Est, Montréal</a><br><br>
+    <div class="w3-content w3-center w3-grayscale-min">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.4211732242283!2d-73.61347376755522!3d45.541490952466766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91915796f7577%3A0xb45591d8dd8656fb!2sMaison%20de%20la%20culture%20Claude-L%C3%A9veill%C3%A9e!5e0!3m2!1sfr!2sca!4v1694458557982!5m2!1sfr!2sca" width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
 
-
-    	<a style="text-decoration:none" href="tel:514-431-8054" class="fa fa-mobile-screen fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Phone 514-431-8054"></a>
-	<a style="text-decoration:none; transform: translateY(-8px); width:215px; text-align:left" href="tel:514-431-8054" class="w3-hover-text-black w3-button">(514) 431-8054</a><br>
-
-     	<a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-regular fa-envelope fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="musicotherika@gmail.com"></a>
-	<a style="text-decoration:none; transform: translateY(-8px); width:215px; text-align:left" href="mailto:musicotherika@gmail.com" class="w3-hover-text-black w3-button">musicotherika@gmail.com</a><br>
-
-
-     	<a style="text-decoration:none" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1" class="fa fa-location-dot fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Montreal Map"></a>
-	<a style="text-decoration:none; transform: translateY(-8px); width:215px; text-align:left" href="https://www.google.com/maps/place/911+Rue+Jean-Talon+E,+Montréal,+QC+H2R+1V5/@45.5417451,-73.6158938,17z/data=!3m1!4b1!4m6!3m5!1s0x4cc9193e2a6aafb1:0xa35da259eae7c429!8m2!3d45.5417451!4d-73.6133189!16s%2Fg%2F11b8v4gqrc?entry=tts&shorturl=1"  class="w3-hover-text-black  w3-button">911, Jean-Talon Est, Montréal</a><br>
-	<br>
-
-     <div class="w3-content w3-center w3-grayscale-min">
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.4211732242283!2d-73.61347376755522!3d45.541490952466766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91915796f7577%3A0xb45591d8dd8656fb!2sMaison%20de%20la%20culture%20Claude-L%C3%A9veill%C3%A9e!5e0!3m2!1sfr!2sca!4v1694458557982!5m2!1sfr!2sca" width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-     </div>
-
-
-  </div>
 </div>
 
 <!-- Footer -->
@@ -1050,33 +1123,33 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 	<p>
 
 <div class="w3-content w3-cell-row" style="max-width:600px;">
-	<div class="w3-cell">
+   <div class="w3-cell">
 
-	<div class="a" style="font-size:11px">
+    <div class="a" style="font-size:11px">
 	<img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear;" width="20"> &nbsp; Erika Guittard, MTA  &nbsp; &nbsp; © &nbsp; 2023 &nbsp; Tous droits réservés
-	</div>
-	</div>
-	</div>
+    </div>
+   </div>
+</div>
 
 
 
    <div class="w3-xlarge w3-section w3-center w3-black">
-     	<a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-xl fa fa-envelope fa-fw w3-hover-opacity" title="E-mail musicotherika@gmail.com"></a>
-     	<a href="https://www.linkedin.com/in/erika-guittard-8a046061" class="fa-xl fa-brands fa-linkedin w3-hover-opacity" title="Erika Linkedin"></a>
+     	<a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-custom fa fa-envelope fa-fw w3-hover-opacity" title="E-mail musicotherika@gmail.com"></a>
+     	<a href="https://www.linkedin.com/in/erika-guittard-8a046061" class="fa-custom fa-brands fa-linkedin w3-hover-opacity" title="Erika Linkedin"></a>
    </div>
 
 
    <div class="w3-content w3-cell-row" style="max-width:600px;">
 
 
-<div class="w3-cell">
+<div class="w3-cell w3-cell-logo">
 	<a href="https://www.musictherapy.ca" style="text-decoration:none;">
 	<img src="images/camt_logo_en.png" class="w3-panel w3-round w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de l'Association Canadienne des musicothérapeutes" width="150">
 	</a>
 </div>
 
 
-<div class="w3-cell">
+<div class="w3-cell w3-cell-logo">
 	<a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none;">
 	<img src="images/psytoday_verified.png" class="w3-panel w3-round w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="150">
 	</a>
@@ -1084,7 +1157,7 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 
 
-<div class="w3-cell">
+<div class="w3-cell w3-cell-logo">
 	<a href="https://www.musicotherapieaqm.org" style="text-decoration:none;">
 	<img src="images/AQM_logo.png" class="w3-panel w3-round w3-opacity-min w3-hover-opacity-off" alt="Lien vers le site de l'Association Québécoise des musicothérapeutes" width="150">
 	</a>
@@ -1099,6 +1172,7 @@ J'oriente désormais ma pratique vers les personnes présentant des défis de sa
 
 <script>
 "use strict";
+
 const steps = [
     {
         title: "Évaluation <br> des <br>besoins"
@@ -1116,6 +1190,11 @@ const steps = [
         title: "Bilan <br>et <br> terminaison"
     }
 ];
+
+let animationPaused = false;
+let currentIndex = 0;
+let animationInterval;
+
 const createStepElement = (step) => {
     const stepParent = document.createElement("div");
     stepParent.classList.add("step-parent");
@@ -1125,7 +1204,7 @@ const createStepElement = (step) => {
     stepParent.style.left = prct;
     const stepTitle = document.createElement("div");
     stepTitle.innerHTML = step.title;
-    
+
     // Set the font family here
     stepTitle.style.fontFamily = "Lato, sans-serif";
 
@@ -1137,6 +1216,7 @@ const createStepElement = (step) => {
     stepParent.appendChild(stepCircle);
     return stepParent;
 };
+
 const activateStep = (stepParent) => {
     const clickedStep = stepParent.querySelector(".step");
     document.querySelectorAll(".step").forEach((step) => {
@@ -1155,11 +1235,46 @@ const activateStep = (stepParent) => {
     });
     document.body.style.setProperty("--progress", stepParent.style.left);
 };
+
 const addStepEventListeners = (stepParent) => {
     stepParent.addEventListener("click", ({ currentTarget }) => {
         activateStep(currentTarget);
+        pauseAnimation();
     });
 };
+
+const pauseAnimation = () => {
+    animationPaused = true;
+    clearInterval(animationInterval);
+};
+
+const continueAnimation = () => {
+    animationPaused = false;
+    animationInterval = setInterval(() => {
+        if (!animationPaused && currentIndex < steps.length) {
+            activateStep(document.querySelectorAll(".step-parent")[currentIndex]);
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+            resetToNoSteps(); // Reset when a cycle is over
+        }
+    }, 2000); // 2 seconds between transitions
+};
+
+const transitionSteps = () => {
+    currentIndex = 0;
+    continueAnimation();
+};
+
+const resetToNoSteps = () => {
+    const stepElements = document.querySelectorAll(".step-parent");
+    stepElements.forEach((stepElement) => {
+        stepElement.querySelector(".step").classList.remove("active", "current");
+        stepElement.querySelector(".step-title").classList.remove("passed");
+    });
+    document.body.style.setProperty("--progress", "0%");
+};
+
 const printSteps = () => {
     const container = document.querySelector(".line");
     steps.forEach((step) => {
@@ -1167,11 +1282,20 @@ const printSteps = () => {
         addStepEventListeners(stepElement);
         container.appendChild(stepElement);
     });
+
+    setTimeout(() => {
+        transitionSteps();
+    }, 2500);
 };
+
 document.addEventListener("DOMContentLoaded", printSteps);
 </script>
 
+
+
     <script>
+	// This is specific for safari on iPhone the background image is fixed instead of scroll but works with Mac
+
         // JavaScript to detect Safari on iPhone
         var isSafariOniPhone = /iPhone/.test(navigator.userAgent) && /Safari/.test(navigator.userAgent);
 
@@ -1185,8 +1309,12 @@ document.addEventListener("DOMContentLoaded", printSteps);
     </script>
 
 
+
+
+
 <script>
-//slide show
+// slide show_______________________
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
