@@ -1308,20 +1308,21 @@ document.addEventListener("DOMContentLoaded", printSteps);
 
 
 
-    <script>
-	// This is specific for safari on iPhone the background image is fixed instead of scroll but works with Mac
+<script>
+    // JavaScript to detect Safari on iPhone
+    var isSafariOniPhone = /iPhone/.test(navigator.userAgent) && /Safari/.test(navigator.userAgent);
+    
+    // Check if the URL contains a query parameter indicating preview mode
+    var isPreviewMode = window.location.search.indexOf('preview=1') !== -1;
 
-        // JavaScript to detect Safari on iPhone
-        var isSafariOniPhone = /iPhone/.test(navigator.userAgent) && /Safari/.test(navigator.userAgent);
-
-        if (isSafariOniPhone) {
-            // Apply styles specific to Safari on iPhone
-            document.querySelectorAll('.bgimg-1, .bgimg-2, .bgimg-3').forEach(function(element) {
-                element.style.backgroundAttachment = 'scroll';
-                // You can apply additional styles here if needed
-            });
-        }
-    </script>
+    if (isSafariOniPhone && !isPreviewMode) {
+        // Apply styles specific to Safari on iPhone, but not in preview mode
+        document.querySelectorAll('.bgimg-1, .bgimg-2, .bgimg-3').forEach(function(element) {
+            element.style.backgroundAttachment = 'scroll';
+            // You can apply additional styles here if needed
+        });
+    }
+</script>
 
 
 
