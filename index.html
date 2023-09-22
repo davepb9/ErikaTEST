@@ -1151,9 +1151,11 @@ img {
 
 
         <div class="w3-row w3-padding-32 w3-section w3-center">
-            <a style="text-decoration:none" href="tel:514-431-8054" class="fa fa-mobile-screen fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Phone 514-431-8054"></a>
+            <a style="text-decoration:none" href="tel:514-431-8054" class="fa fa-mobile-screen fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="Erika's Phone Number"></a>
 
-            <a style="text-decoration:none; transform: translateY(-8px); width: 215px; border-radius: 5px;" href="tel:514-431-8054" class="w3-hover-text-black w3-button contact-info">(514) 431-8054</a><br>
+<a id="phone-link" style="text-decoration:none; transform: translateY(-8px); width: 215px; border-radius: 5px;" href="#contact" class="w3-hover-text-black w3-button contact-info">(514)-&#9633;&#9633;&#9633;-&#9633;&#9633;&#9633;&#9633;</a><br>
+
+
 
             <a style="text-decoration:none" href="mailto:musicotherika@gmail.com" class="fa-regular fa-envelope fa-fw w3-hover-text-black w3-xxlarge w3-margin-right" title="musicotherika@gmail.com"></a>
 
@@ -1362,6 +1364,50 @@ img {
                 // You can apply additional styles here if needed
             });
         }</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Your JavaScript code to generate the phone number
+  function generatePhoneNumber() {
+    var realPhoneNumber = '514-431-8054'; // Your actual phone number
+    var phoneNumberLink = document.getElementById('phone-link');
+    var placeholderPhoneNumber = '(514)-&#9633;&#9633;&#9633;-&#9633;&#9633;&#9633;&#9633;'; // Placeholder phone number
+    var phoneLinkVisible = false;
+
+    // Function to reveal the phone number
+    function revealPhoneNumber() {
+      if (!phoneLinkVisible) {
+        phoneLinkVisible = true;
+
+        // Replace the placeholder text with the real phone number
+        phoneNumberLink.textContent = realPhoneNumber;
+        phoneNumberLink.title = realPhoneNumber;
+        phoneNumberLink.setAttribute('href', 'tel:' + realPhoneNumber);
+      }
+    }
+
+    // Create an Intersection Observer to track when the element is in view
+    var observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          // When the element is in view, reveal the phone number
+          setTimeout(revealPhoneNumber, 3000);
+
+          // Stop observing once the element is in view
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    // Attach the Intersection Observer to the phone link
+    observer.observe(phoneNumberLink);
+  }
+
+  // Call the function to generate and replace the phone number
+  generatePhoneNumber();
+});
+</script>
 
 
 
