@@ -469,6 +469,11 @@ img {
     display: none !important;
   }
 }
+/* CUSTOM HIDE FOR EXTRA SMALL DEVICES */
+@media (max-width: 335px) {
+  .w3-show-xsmall {
+  display: block !important;  }
+}
 
 
       @media (max-width: 768px) {
@@ -586,74 +591,74 @@ img {
   background-color: #D3D3D3;
   Text-align: center;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .line .step-parent .step-title {
     transform: scale(0.95, 1);
   }
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 530px) {
   .line .step-parent .step-title {
     transform: scale(0.9, 1);
   }
 }
-@media screen and (max-width: 635px) {
+@media screen and (max-width: 510px) {
   .line .step-parent .step-title {
     transform: scale(0.85, 1);
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 484px) {
   .line .step-parent .step-title {
     transform: scale(0.8, 1);
   }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 460px) {
   .line .step-parent .step-title {
     transform: scale(0.75, 1);
   }
 }
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 430px) {
   .line .step-parent .step-title {
     transform: scale(0.7, 1);
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 405px) {
   .line .step-parent .step-title {
     transform: scale(0.65, 1);
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 380px) {
   .line .step-parent .step-title {
     transform: scale(0.6, 1);
   }
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 350px) {
   .line .step-parent .step-title {
     transform: scale(0.55, 1);
   }
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 330px) {
   .line .step-parent .step-title {
     transform: scale(0.5, 1);
   }
 }
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 305px) {
   .line .step-parent .step-title {
     transform: scale(0.45, 1);
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 280px) {
   .line .step-parent .step-title {
     transform: scale(0.4, 1);
   }
 }
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 260px) {
   .line .step-parent .step-title {
-    transform: scale(0.35, 1);
+    transform: scale(0.37, 1);
   }
 }
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 230px) {
   .line .step-parent .step-title {
-    transform: scale(0.3, 1);
+    transform: scale(0.35, 1);
   }
 }
 
@@ -774,6 +779,14 @@ img {
   }
 }
 
+/* Font size for screens 345px or less */
+@media screen and (max-width: 345px) {
+    .logo-text {
+        font-size: 2em; /* Change font size to 5em for smaller screens */
+    }
+}
+
+
 
 </style>
 </head>
@@ -785,12 +798,12 @@ img {
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-left" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="#accueil" class="w3-bar-item w3-button">ACCUEIL</a>
+            <a href="#accueil" class="w3-bar-item w3-button w3-hide-xsmall">ACCUEIL</a>
             <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa-regular fa-face-smile"></i>&nbsp;QUI SUIS-JE?</a>
             <a href="#musictherapy" class="w3-bar-item w3-button w3-hide-small"><i class="fa-solid fa-music"></i>&nbsp;MUSICOTHÉRAPIE</a>
             <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope w3-hide-xsmall"></i>&nbsp;CONTACT</a>
             <a href="indexEN.html" class="w3-bar-item w3-button w3-right w3-hover-red">
-                <span class="w3-hide-xsmall">EN</span>
+                <span class="w3-hide-xsmall w3-hide-medium">EN</span>
                 <i class="fa fa-language"></i>
             </a>
         </div>
@@ -798,33 +811,41 @@ img {
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-left w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
             <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa-regular fa-face-smile"></i>&nbsp;QUI SUIS-JE?</a>
-            <a href="#musictherapy" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa-solid fa-music"></i>&nbsp;  MUSICOTHÉRAPIE</a>
-            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-envelope"></i>&nbsp;  CONTACT</a>
+            <a href="#musictherapy" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa-solid fa-music"></i>&nbsp;MUSICOTHÉRAPIE</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-envelope"></i>&nbsp;CONTACT</a>
         </div>
     </div>
 
-    <!-- First Parallax Image with Logo Text -->
-    <div class="bgimg-1 w3-display-container w3-opacity-min" id="accueil">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-hide-medium w3-hide-small w3-animate-opacity" style="border-radius: 5px;">
-                ERIKA GUITTARD
-                <img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear;" width="20">
-                <span class="w3-condensed">&nbsp;Musicothérapeute, MTA</span>
-            </span>
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="accueil">
+    <div class="w3-display-middle" style="white-space: nowrap; text-align: center;">
 
-            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-condensed w3-hide-large w3-hide-small w3-animate-opacity" style="border-radius: 5px;">
-                ERIKA GUITTARD&nbsp;
-                <img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear;" width="20">
-                <span class="w3-condensed w3-large">&nbsp;Musicothérapeute, MTA</span>
-            </span>
+        <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-hide-medium w3-hide-small w3-animate-opacity" style="border-radius: 5px; display: inline-block;">ERIKA GUITTARD
+            <img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear; vertical-align: middle;" width="20">
+            <span class="w3-condensed">&nbsp;Musicothérapeute, MTA&nbsp;&nbsp;</span>
+        </span>
 
-            <span class="w3-center w3-padding-large w3-black w3-large w3-xcondensed w3-hide-large w3-hide-medium w3-animate-opacity" style="border-radius: 5px;">
-                ERIKA GUITTARD&nbsp;
-                <img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear;" width="20">
-                <span class="w3-xcondensed w3-medium">&nbsp;Musicothérapeute, MTA</span>
-            </span>
-        </div>
+        <span class="w3-center w3-padding-large w3-black w3-xlarge w3-condensed w3-hide-large w3-hide-small w3-animate-opacity" style="border-radius: 5px; display: inline-block;">ERIKA GUITTARD&nbsp;
+            <img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear; vertical-align: middle;" width="20">
+            <span class="w3-condensed w3-xlarge">&nbsp;Musicothérapeute, MTA&nbsp;&nbsp;</span>
+        </span>
+
+        <span class="w3-center w3-padding-large w3-black w3-medium w3-xcondensed w3-hide-large w3-hide-medium w3-hide-xsmall w3-animate-opacity" style="border-radius: 5px; display: inline-block;">ERIKA GUITTARD&nbsp;
+            <img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear; vertical-align: middle;" width="20">
+            <span class="w3-xcondensed w3-medium">&nbsp;Musicothérapeute, MTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </span>
+
+        <span class="w3-center w3-padding-large w3-black w3-small w3-xcondensed w3-hide-large w3-hide-medium w3-hide-small w3-show-xsmall w3-animate-opacity" style="border-radius: 5px; display: inline-block;">ERIKA GUITTARD&nbsp;
+            <img src="logo.png" alt="Logo d'Erika" class="w3-image w3-opacity-min w3-hover-opacity-off fa-flip-logo" style="--fa-animation-duration: 5s; --fa-animation-timing: linear; vertical-align: middle;" width="20">
+            <span class="w3-xcondensed w3-small">&nbsp;Musicothérapeute, MTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </span>
+
+
+
+
+
     </div>
+</div>
 
     <!-- ABOUT - QUI JE SUIS -->
     <div class="w3-content w3-container w3-padding-64" id="about">
@@ -893,9 +914,9 @@ img {
     </div>
 
     <!-- MUSICOTHÉRAPIE ABOUT -->
-    <div class="w3-content w3-container w3-padding-64 scroll-reveal animate toptop">
-
-        <h3 class="w3-center" style="margin-bottom: 32px">QU'EST-CE QUE C'EST?</h3>
+    <div class="w3-content w3-container w3-padding-64">
+<div class="scroll-reveal animate toptop w3-container w3-content w3-padding-8">
+        <h3 class="w3-center" style="margin:8px; margin-bottom: 32px">QU'EST-CE QUE C'EST?</h3>
         <p>
             “La musicothérapie est une discipline dans laquelle des musicothérapeutes certifiés (MTA) utilisent la musique à l’intérieur du lien thérapeutique afin de soutenir le développement, la santé et le bien-être. Les musicothérapeutes se servent de la musique de façon sécuritaire et éthique pour répondre aux besoins humains sur le plan de la communication et aussi sur les plans cognitif, musical, physique, social et spirituel.”
             <i class="w3-right"><small>- Association canadienne des musicothérapeutes (ACM)</small></i>
@@ -904,15 +925,15 @@ img {
         <div class="w3-row">
             <p class="w3-justify">La musicothérapie est une pratique thérapeutique douce et bienveillante dans laquelle la musique sert “d’excuse” pour venir travailler sur les défis ou difficultés que le client rencontre dans sa vie. De nombreuses facettes du médium musical sont utilisées afin de permettre au client de s’explorer, de s’exprimer, ou même de se relaxer ou se dépasser, dépendamment de ses besoins.</p>
         </div>
-        <br>
-        <br>
+        </div>
+        </div>
         <hr>
 
 
 
 
         <!-- Container DÉROULEMENT -->
-        <div class="w3-content w3-container" style="padding:32px 10%">
+        <div class="w3-content w3-container w3-padding-64">
             <h3 class="w3-center">DÉROULEMENT</h3>
             <div class=" scroll-reveal animate skewleft">
                 <div class="w3-row w3-row-padding" style="padding: 0; margin: 8px; text-align:center">
@@ -954,7 +975,7 @@ img {
 
 
         <!-- Container INTERVENTIONS -->
-        <div class="w3-container" style="padding:32px 10%">
+        <div class="w3-container" style="padding:64px 10%">
             <h3 class="w3-center">EXEMPLES D'INTERVENTIONS</h3>
             <div class="w3-row-padding w3-center" style="margin-top: 32px">
 
@@ -1104,9 +1125,10 @@ img {
                 </div>
                 <hr>
             </div>
+<br>
         </div>
 
-    </div>
+
 
 
 
@@ -1122,8 +1144,10 @@ img {
     <!-- Container (Contact Section) -->
     <div class="w3-content w3-container w3-padding-64">
         <h3 class="w3-center">POUR PRENDRE CONTACT :</h3>
-        <p class="w3-center scroll-reveal intro-text">Venez composer l'harmonie qui vous chante !</p>
-        <p class="w3-center">Séances disponibles les lundis uniquement. Tarifs : 100$ / 60min </p>
+        <p class="w3-medium w3-center scroll-reveal intro-text w3-hide-small">Venez composer l'harmonie qui vous chante !</p>
+        <p class="w3-small w3-center scroll-reveal intro-text w3-hide-medium w3-hide-large">Venez composer l'harmonie qui vous chante !</p>
+        <p class="w3-center w3-medium w3-hide-small">Séances disponibles les lundis uniquement. Tarifs : 100$ / 60min </p>
+        <p class="w3-center w3-small w3-hide-medium w3-hide-large">Séances disponibles les lundis uniquement. Tarifs : 100$ / 60min </p>
 
 
         <div class="w3-row w3-padding-32 w3-section w3-center">
