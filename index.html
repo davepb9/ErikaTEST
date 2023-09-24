@@ -36,6 +36,7 @@ body, html {
 }
 
 /* _______________________SLIDESHOW _________________ Hide the images by default */
+/* Hide the images by default */
 img {
   vertical-align: middle;
 }
@@ -48,6 +49,7 @@ img {
 .mySlides {
   display: none;
 }
+
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
   cursor: pointer;
@@ -58,16 +60,17 @@ img {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 38%; /* Adjusted to 50% for center alignment vertically */
+  transform: translateY(-50%); /* Center the button vertically */
   width: auto;
-  padding: 25px;
-  margin-top: -50px;
+  padding: 10% 25px; /* Adjust padding as needed */
   color: white;
   font-weight: bold;
   font-size: 40px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  z-index: 2; /* Ensure the buttons are above the scrolling container */
 }
 
 /* Position the "next button" to the right */
@@ -79,7 +82,7 @@ img {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Number text (1/3 etc) */
@@ -90,6 +93,7 @@ img {
   position: absolute;
   top: 1em;
 }
+
 /* Container for image text */
 .caption-container {
   text-align: center;
@@ -110,7 +114,7 @@ img {
   width: 16.66%;
 }
 
-/* Add a transparency effect for thumnbail images */
+/* Add a transparency effect for thumbnail images */
 .demo {
   opacity: 0.5;
 }
@@ -119,6 +123,62 @@ img {
 .demo:hover {
   opacity: 1;
 }
+
+/* Add a new class for the scrolling container */
+.scrolling-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%; /* Adjust the width as needed */
+  margin: 20px 0; /* Add margin for spacing */
+  position: relative; /* Add this */
+  z-index: 1; /* Add this to ensure the scrolling container is above the buttons */
+}
+
+/* Add a new class for the scrolling content */
+.scrolling-content {
+  display: inline-block;
+}
+
+/* Adjust the styles for the thumbnail images inside the scrolling container */
+.scrolling-container .demo.cursor {
+  opacity: 0.5;
+  margin-right: 10px; /* Adjust spacing between images as needed */
+}
+
+/* Adjust the styles for active and hovered images inside the scrolling container */
+.scrolling-container .active,
+.scrolling-container .demo.cursor:hover {
+  opacity: 1;
+}
+
+/* Add styles for the scrolling demo cursor container */
+.demo-cursor-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Adjust the styles for the thumbnail images inside the scrolling container */
+.demo-cursor-container .demo.cursor {
+  opacity: 0.5;
+  margin-right: 10px; /* Adjust spacing between images as needed */
+  transition: opacity 0.3s; /* Add a transition effect for smooth hover */
+}
+
+/* Change the opacity to 1 when the images are hovered */
+.demo-cursor-container .demo.cursor:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
 
 .fa-beat-hover:hover {
   -webkit-animation-name: fa-beat;
@@ -856,8 +916,8 @@ img {
         <div class="w3-row">
             <div class="w3-col m6 w3-center w3-padding-large scroll-reveal animate left">
 
-                <p><b><img src="logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="30" height="100">&nbsp; Erika Guittard, MTA</b></p><br>
-                <img src="images/erika1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo 1" width="280" height="100">
+                <p><b><img src="logo.png" class="w3-round w3-image" alt="Lien vers le Phsychology Today d'Erika" width="30" height="100">&nbsp; Erika Guittard, MTA</b></p><br>
+                <img src="photos/DSC_0742-2.jpg" class="w3-round w3-image w3-hover-opacity" alt="Photo 1" width="280" height="100">
             </div>
 
 
@@ -872,7 +932,7 @@ img {
                 J'oriente désormais ma pratique vers les personnes présentant des défis de santé mentale (anxiété, dépression, troubles de la personnalité, PTSD, etc.) mais serai ravie d’accueillir d’autres clientèles selon ma disponibilités. <a href="#contact"> Contactez-moi,</a> et il me fera plaisir d’en discuter avec vous.
 
                 <p class="w3-center w3-cell-row icon-container">
-                    <a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none" class="w3-cell w3-panel">
+                    <a href="https://www.psychologytoday.com/ca/therapists/erika-guittard-montreal-qc/1189178" style="text-decoration:none" class="w3-cell w3-panel">
                         <img src="images/psytoday_logo.png" class="w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Psychology Today d'Erika" width="80" height="100">
                     </a>
 
@@ -1046,46 +1106,71 @@ img {
 
             <div class="w3-container w3-padding-16">
                 <div class="mySlides">
-                    <div class="numbertext">1 / 6</div>
+                    <div class="numbertext">1 / 9</div>
                     <!--		LIEN ICI VERS AUTRE PAGE HTML
                             <a href="index.html"></a>		-->
                     <img src="photos/DSC_0465.jpg" style="width:100%" alt="Instrument 1">
                 </div>
 
                 <div class="mySlides">
-                    <div class="numbertext">2 / 6</div>
+                    <div class="numbertext">2 / 9</div>
                     <!--		LIEN ICI VERS AUTRE PAGE HTML
                             <a href="index.html"></a>		-->
                     <img src="photos/DSC_0495.jpg" style="width:100%" alt="Instrument 2">
                 </div>
 
                 <div class="mySlides">
-                    <div class="numbertext">3 / 6</div>
+                    <div class="numbertext">3 / 9</div>
                     <!--		LIEN ICI VERS AUTRE PAGE HTML
                             <a href="index.html"></a>		-->
                     <img src="photos/DSC_0640.jpg" style="width:100%" alt="Instrument 3">
                 </div>
 
                 <div class="mySlides">
-                    <div class="numbertext">4 / 6</div>
+                    <div class="numbertext">4 / 9</div>
                     <!--		LIEN ICI VERS AUTRE PAGE HTML
                             <a href="index.html"></a>		-->
                     <img src="photos/DSC_0594.jpg" style="width:100%" alt="Instrument 4">
                 </div>
 
                 <div class="mySlides">
-                    <div class="numbertext">5 / 6</div>
+                    <div class="numbertext">5 / 9</div>
                     <!--		LIEN ICI VERS AUTRE PAGE HTML
                             <a href="index.html"></a>		-->
                     <img src="photos/DSC_0584.jpg" style="width:100%" alt="Instrument 5">
                 </div>
 
                 <div class="mySlides">
-                    <div class="numbertext">6 / 6</div>
+                    <div class="numbertext">6 / 9</div>
                     <!--		LIEN ICI VERS AUTRE PAGE HTML
                             <a href="index.html"></a>		-->
                     <img src="photos/DSC_0568.jpg" style="width:100%" alt="Instrument 6">
                 </div>
+
+
+                <div class="mySlides">
+                    <div class="numbertext">7 / 9</div>
+                    <!--		LIEN ICI VERS AUTRE PAGE HTML
+                            <a href="index.html"></a>		-->
+                    <img src="photos/DSC_0612.jpg" style="width:100%" alt="Instrument 7">
+                </div>
+
+
+                <div class="mySlides">
+                    <div class="numbertext">8 / 9</div>
+                    <!--		LIEN ICI VERS AUTRE PAGE HTML
+                            <a href="index.html"></a>		-->
+                    <img src="photos/DSC_0571.jpg" style="width:100%" alt="Instrument 8">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">9 / 9</div>
+                    <!--		LIEN ICI VERS AUTRE PAGE HTML
+                            <a href="index.html"></a>		-->
+                    <img src="photos/DSC_0592.jpg" style="width:100%" alt="Instrument 9">
+                </div>
+
+
 
                 <a class="prev" onclick="plusSlides(-1)">❮</a>
                 <a class="next" onclick="plusSlides(1)">❯</a>
@@ -1102,30 +1187,23 @@ img {
 
 
 
-
-                <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="photos/DSC_0465.jpg" style="width:100%" onclick="currentSlide(1)" alt="Aquarelle avec Minette Pinceu-Bleue">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="photos/DSC_0495.jpg" style="width:100%" onclick="currentSlide(2)" alt="Grattage de corde avec Frais Piednue">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="photos/DSC_0640.jpg" style="width:100%" onclick="currentSlide(3)" alt="Posture parfaite en montage avec Chemisette Ligné">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="photos/DSC_0594.jpg" style="width:100%" onclick="currentSlide(4)" alt="Gérer ses écrans pour la photo avec Content Lemonsieur">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="photos/DSC_0584.jpg" style="width:100%" onclick="currentSlide(5)" alt="Exploiter le silence et la solitude avec Donturn Yourback">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="photos/DSC_0568.jpg" style="width:100%" onclick="currentSlide(6)" alt="Comment refaire son mur à l'aquarelle Contente Dêtrelà">
-                    </div>
-                </div>
+    <div class="demo-cursor-container">
+      <!-- Add all 9 images within this container -->
+      <img class="demo cursor" src="photos/DSC_0465.jpg" style="width:16.66%" onclick="currentSlide(1)" alt="Instrument 1">
+      <img class="demo cursor" src="photos/DSC_0495.jpg" style="width:16.66%" onclick="currentSlide(2)" alt="Instrument 2">
+      <img class="demo cursor" src="photos/DSC_0640.jpg" style="width:16.66%" onclick="currentSlide(3)" alt="Instrument 3">
+      <img class="demo cursor" src="photos/DSC_0594.jpg" style="width:16.66%" onclick="currentSlide(4)" alt="Instrument 4">
+      <img class="demo cursor" src="photos/DSC_0584.jpg" style="width:16.66%" onclick="currentSlide(5)" alt="Instrument 5">
+      <img class="demo cursor" src="photos/DSC_0568.jpg" style="width:16.66%" onclick="currentSlide(6)" alt="Instrument 6">
+      <img class="demo cursor" src="photos/DSC_0612.jpg" style="width:16.66%" onclick="currentSlide(7)" alt="Instrument 7">
+      <img class="demo cursor" src="photos/DSC_0571.jpg" style="width:16.66%" onclick="currentSlide(8)" alt="Instrument 8">
+      <img class="demo cursor" src="photos/DSC_0592.jpg" style="width:16.66%" onclick="currentSlide(9)" alt="Instrument 9">
+    </div>
                 <hr>
-            </div>
+
 <br>
+        </div>
+        </div>
         </div>
 
 
@@ -1210,7 +1288,7 @@ img {
 
 
                 <div class="w3-cell w3-cell-logo">
-                    <a href="https://www.psychologytoday.com/us/therapists/liora-pourati-los-angeles-ca/193575" style="text-decoration:none;">
+                    <a href="https://www.psychologytoday.com/ca/therapists/erika-guittard-montreal-qc/1189178" style="text-decoration:none;">
                         <img src="images/psytoday_verified.png" class="w3-panel w3-round w3-opacity-min w3-hover-opacity-off" alt="Lien vers le Phsychology Today d'Erika" width="150">
                     </a>
                 </div>
@@ -1448,7 +1526,8 @@ img {
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
             //THIS IS FOR THE CAPTION TEXT captionText.innerHTML = dots[slideIndex-1].alt;
-        }</script>
+        }
+</script>
 
 
     <script>// SQUARE ANIMATION Numero 1 - Remove the transition class
