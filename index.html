@@ -61,7 +61,7 @@ img {
   cursor: pointer;
   position: absolute;
   top: 38%; /* Adjusted to 50% for center alignment vertically */
-  transform: translateY(-50%); /* Center the button vertically */
+  -webkit-transform: translateY(-50%); /* Center the button vertically */
   width: auto;
   padding: 10% 25px; /* Adjust padding as needed */
   color: white;
@@ -277,24 +277,24 @@ img {
   0%, 100% {
     /* Your starting and ending styles here */
     opacity: 1;
-    transform: rotateY(0deg); /* No rotation at the beginning and end */
+   -webkit-transform: rotateY(0deg); /* No rotation at the beginning and end */
   }
 
   0%, 100% {
     /* Your starting and ending styles here */
     opacity: 1;
-    transform: rotateY(0deg); /* No rotation at the beginning and end */
+    -webkit-transform: rotateY(0deg); /* No rotation at the beginning and end */
   }
 
   25%, 50% {
     /* 25% to 75% is the pause duration (2 second in a 5-second animation) */
     opacity: 0.8;
-    transform: rotateY(0deg); /* No rotation during the pause */
+    -webkit-transform: rotateY(0deg); /* No rotation during the pause */
   }
   75% {
     /* Your intermediate styles here */
     opacity: 0.5;
-    transform: rotateY(180deg); /* Rotate 180 degrees on the Y-axis */
+    -webkit-transform: rotateY(180deg); /* Rotate 180 degrees on the Y-axis */
   }
 }
 
@@ -361,18 +361,18 @@ img {
 
 .square {
     opacity: 0;
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .square {
-    transition: opacity 1.5s ease, transform 1.5s ease;
+    -webkit-transition: opacity 1.5s ease, transform 1.5s ease;
   }
 }
 
 .square-transition {
     opacity: 1;
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
 }
 
 
@@ -389,7 +389,7 @@ img {
     -webkit-background-clip: text;
 }
 .intro-text.active{
-    animation: typeIn 3s steps(36) forwards;
+    -webkit-animation: typeIn 3s steps(36) forwards;
 }
 @keyframes typeIn {
     to { width: 36ch; }
@@ -398,74 +398,74 @@ img {
 .animate{
   position: relative;
   margin: 0 auto;
-  transition: transform 0.5s, opacity 0.5s;
+  -webkit-transition: transform 0.5s, opacity 0.5s;
 }
 .animate.left{
-    transform: translateX(-10em);
+    -webkit-transform: translateX(-10em);
     opacity: 0;
 }
 
 .animate.left2{
-    transform: translateX(-5em);
+    -webkit-transform: translateX(-5em);
     opacity: 0;
-    transition: transform 1s;
+    -webkit-transition: transform 1s;
 }
 
 .animate.right2{
-    transform: translateX(5em);
+    -webkit-transform: translateX(5em);
     opacity: 0;
-    transition: transform 1s;
+    -webkit-transition: transform 1s;
 }
 
 .animate.right{
-    transform: translateX(10em);
+    -webkit-transform: translateX(10em);
     opacity: 0;
 }
     .animate.toptop {
-        transform: translateY(-10em) scaleX(1);
+        -webkit-transform: translateY(-10em) scaleX(1);
         opacity: 0;
-        transition: transform 1s;
+        -webkit-transition: transform 1s;
     }
 .animate.top{
-    transform: translateY(-10em) scaleX(3);
+    -webkit-transform: translateY(-10em) scaleX(3);
     opacity: 0;
 }
 .animate.top360{
-    transform: translateY(-10em) rotate(360deg);
+    -webkit-transform: translateY(-10em) rotate(360deg);
     opacity: 0;
 }
 .animate.bottom{
-    transform: translateY(10em) scaleX(3);
+    -webkit-transform: translateY(10em) scaleX(3);
     opacity: 0;
 }
 .animate.fadefast{
-    transform: translateY(-0em) scaleX(1);
+    -webkit-transform: translateY(-0em) scaleX(1);
     opacity: 0;
-    transition: transform 2s, opacity 2s;
+    -webkit-transition: transform 2s, opacity 2s;
 }
 .animate.fadeslow{
-    transform: translateY(-0em) scaleX(1);
+    -webkit-transform: translateY(-0em) scaleX(1);
     opacity: 0;
-    transition: transform 5s, ease-out 1s, opacity 2s;
+    -webkit-transition: transform 5s, ease-out 1s, opacity 2s;
 }
 
 .animate.skewleft{
-    transform: translate(-10em, 0px) scale(0.1, 1) skew(-60deg, 0deg);
+    -webkit-transform: translate(-10em, 0px) scale(0.1, 1) skew(-60deg, 0deg);
     opacity: 0;
-    transition: transform 0.5s;
+   -webkit- transition: transform 0.5s;
 }
 
 /* For small screens (e.g., screens with a maximum width of 320px), override the animation styles */
 @media (max-width: 380px) {
     .animate.skewleft {
-        transform: none; /* Reset the transform properties */
+        -webkit-transform: none; /* Reset the transform properties */
         opacity: 1; /* Make it fully visible */
-        transition: none; /* Remove any transition */
+        -webkit-transition: none; /* Remove any transition */
     }
 }
 
 .animate.active{
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
     opacity: 1;
 }
 
@@ -485,7 +485,7 @@ img {
 /* Apply a column layout for screens between 750px and 600px */
 @media screen and (max-width: 750px) and (min-width: 601px) {
     .icon-container {
-        flex-direction: column;
+        -webkit-flex-direction: column;
         align-items: center;
     }
 
@@ -497,7 +497,7 @@ img {
 /* Apply a column layout for screens less than 400px */
 @media screen and (max-width: 400px) {
     .icon-container {
-        flex-direction: column;
+        -webkit-flex-direction: column;
         align-items: center;
     }
 
@@ -607,7 +607,7 @@ img {
 
 /* TIMELINE */
 * {
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
 }
 
 :root {
@@ -629,13 +629,13 @@ img {
 }
 .line .step-parent {
   display: flex;
-  flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
   position: absolute;
   width: fit-content;
   height: 120px;
   align-items: center;
   justify-content: space-between;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
 }
 
 /* INITIAL ---------------- */
@@ -653,72 +653,72 @@ img {
 }
 @media screen and (max-width: 600px) {
   .line .step-parent .step-title {
-    transform: scale(0.95, 1);
+    -webkit-transform: scale(0.95, 1);
   }
 }
 @media screen and (max-width: 530px) {
   .line .step-parent .step-title {
-    transform: scale(0.9, 1);
+    -webkit-transform: scale(0.9, 1);
   }
 }
 @media screen and (max-width: 510px) {
   .line .step-parent .step-title {
-    transform: scale(0.85, 1);
+    -webkit-transform: scale(0.85, 1);
   }
 }
 @media screen and (max-width: 484px) {
   .line .step-parent .step-title {
-    transform: scale(0.8, 1);
+    -webkit-transform: scale(0.8, 1);
   }
 }
 @media screen and (max-width: 460px) {
   .line .step-parent .step-title {
-    transform: scale(0.75, 1);
+    -webkit-transform: scale(0.75, 1);
   }
 }
 @media screen and (max-width: 430px) {
   .line .step-parent .step-title {
-    transform: scale(0.7, 1);
+    -webkit-transform: scale(0.7, 1);
   }
 }
 @media screen and (max-width: 405px) {
   .line .step-parent .step-title {
-    transform: scale(0.65, 1);
+    -webkit-transform: scale(0.65, 1);
   }
 }
 @media screen and (max-width: 380px) {
   .line .step-parent .step-title {
-    transform: scale(0.6, 1);
+    -webkit-transform: scale(0.6, 1);
   }
 }
 @media screen and (max-width: 350px) {
   .line .step-parent .step-title {
-    transform: scale(0.55, 1);
+    -webkit-transform: scale(0.55, 1);
   }
 }
 @media screen and (max-width: 330px) {
   .line .step-parent .step-title {
-    transform: scale(0.5, 1);
+    -webkit-transform: scale(0.5, 1);
   }
 }
 @media screen and (max-width: 305px) {
   .line .step-parent .step-title {
-    transform: scale(0.45, 1);
+    -webkit-transform: scale(0.45, 1);
   }
 }
 @media screen and (max-width: 280px) {
   .line .step-parent .step-title {
-    transform: scale(0.4, 1);
+    -webkit-transform: scale(0.4, 1);
   }
 }
 @media screen and (max-width: 260px) {
   .line .step-parent .step-title {
-    transform: scale(0.37, 1);
+    -webkit-transform: scale(0.37, 1);
   }
 }
 @media screen and (max-width: 230px) {
   .line .step-parent .step-title {
-    transform: scale(0.35, 1);
+    -webkit-transform: scale(0.35, 1);
   }
 }
 
@@ -753,7 +753,7 @@ img {
   width: 10px;
   cursor: pointer;
   height: 10px;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
   border-radius: 50%;
   font-family: monospace;
   text-transform: uppercase;
@@ -762,14 +762,14 @@ img {
   background-color: black;
 }
 .step.active.current {
-  transform: scale(2) translateY(-25%);
+  -webkit-transform: scale(2) translateY(-25%);
 }
 .step.active span {
   background-color: white;
 }
 .step span {
   background-color: #646464;
-  transform: translate(-10%, -150%);
+  -webkit-transform: translate(-10%, -150%);
   position: absolute;
   padding: 3px;
   border-radius: 5px;
