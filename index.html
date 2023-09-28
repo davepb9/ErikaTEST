@@ -475,16 +475,16 @@ img {
 
 
 
+
+
 /* Disable animations for older Safari versions */
+.disable-animations .intro-text,
 .disable-animations .animate {
-        -webkit-transform: none; /* Reset the transform properties */
-        opacity: 1; /* Make it fully visible */
-        -webkit-transition: none; /* Remove any transition */
+  -webkit-transform: none; /* Reset the transform properties */
+  opacity: 1; /* Make it fully visible */
+  -webkit-transition: none; /* Remove any transition */
   /* Add any additional styles to disable animations */
 }
-
-
-
 
 
 
@@ -1444,7 +1444,7 @@ img {
 
 
 <script>
-// Get the user agent string
+// JavaScript to detect older browsers
 const userAgent = navigator.userAgent.toLowerCase();
 
 // Check for Safari (before version 12)
@@ -1462,110 +1462,109 @@ const isOpera = userAgent.includes('opr/') && parseInt(userAgent.split('opr/')[1
 // Check for Internet Explorer (before version 11)
 const isIE = userAgent.includes('msie') || userAgent.includes('trident/') && parseInt(userAgent.split('rv:')[1], 10) < 11;
 
-// Check if Intersection Observer is supported
-const isIntersectionObserverSupported = 'IntersectionObserver' in window;
+// Disable animations for the specified browsers and add the 'active' class
+if (isSafari || isChrome || isFirefox || isOpera || isIE) {
+    const elementsToDisableAnimation = document.querySelectorAll('.intro-text, .animate, .loader');
 
-// Disable animations for the specified browsers
-if (isSafari || isChrome || isFirefox || isOpera || isIE || !isIntersectionObserverSupported) {
-  const elementsToDisableAnimation = document.querySelectorAll('.intro-text, .animate, .loader, .square');
-
-  elementsToDisableAnimation.forEach((element) => {
-    element.style.animation = 'none';
-    element.style.WebkitAnimation = 'none';
-  });
-} else {
-  // Intersection Observer is supported, proceed with animations
-
-  // SQUARE ANIMATION Numero 1 - Remove the transition class
-  const square = document.querySelector('.square');
-  square.classList.remove('square-transition');
-
-  // Create the observer, same as before:
-  const observerOptions = isIntersectionObserverSupported ? { passive: true } : {};
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        square.classList.add('square-transition');
-        return;
-      }
-
-      square.classList.remove('square-transition');
+    elementsToDisableAnimation.forEach((element) => {
+        element.style.animation = 'none';
+        element.style.WebkitAnimation = 'none';
+        element.classList.add('active'); // Add the 'active' class
     });
-  }, observerOptions);
+} else {
+    // Intersection Observer is supported, proceed with animations
 
-  observer.observe(document.querySelector('.square-wrapper'));
+    // SQUARE ANIMATION Numero 1 - Remove the transition class
+    const square = document.querySelector('.square');
+    square.classList.remove('square-transition');
 
-  // BOX ANIMATIONssss Numero 2
-  function scrollTrigger(selector, options = {}) {
-    let els = document.querySelectorAll(selector);
-    els = Array.from(els)
-    els.forEach(el => {
-      addObserver(el, options)
-    })
-  }
+    // Create the observer, same as before:
+    const observerOptions = 'IntersectionObserver' in window ? { passive: true } : {};
 
-  function addObserver(el, options) {
-    if (!isIntersectionObserverSupported) {
-      if (options.cb) {
-        options.cb(el)
-      } else {
-        entry.target.classList.add('active')
-      }
-      return
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                square.classList.add('square-transition');
+                return;
+            }
+
+            square.classList.remove('square-transition');
+        });
+    }, observerOptions);
+
+    observer.observe(document.querySelector('.square-wrapper'));
+
+    // BOX ANIMATIONssss Numero 2
+    function scrollTrigger(selector, options = {}) {
+        let els = document.querySelectorAll(selector);
+        els = Array.from(els)
+        els.forEach(el => {
+            addObserver(el, options)
+        })
     }
-    let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elements list and the observer instance
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (options.cb) {
-            options.cb(el)
-          } else {
-            entry.target.classList.add('active')
-          }
-          observer.unobserve(entry.target)
+
+    function addObserver(el, options) {
+        if (!('IntersectionObserver' in window)) {
+            if (options.cb) {
+                options.cb(el)
+            } else {
+                entry.target.classList.add('active')
+            }
+            return
         }
-      })
-    }, options)
-    observer.observe(el)
-  }
-  // Example usages:
-  scrollTrigger('.intro-text')
-
-  scrollTrigger('.scroll-reveal', {
-    rootMargin: '-10%',
-  })
-
-  scrollTrigger('.loader', {
-    rootMargin: '-10%',
-    cb: function (el) {
-      el.innerText = 'Loading...'
-      setTimeout(() => {
-        el.innerText = 'Task Complete!'
-      }, 1000)
+        let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elements list and the observer instance
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (options.cb) {
+                        options.cb(el)
+                    } else {
+                        entry.target.classList.add('active')
+                    }
+                    observer.unobserve(entry.target)
+                }
+            })
+        }, options)
+        observer.observe(el)
     }
-  })
+    // Example usages:
+    scrollTrigger('.intro-text')
 
-  // Change style of navbar on scroll
-  window.onscroll = function () { myFunction() };
-  function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-      navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-  }
+    scrollTrigger('.scroll-reveal', {
+        rootMargin: '-10%',
+    })
 
-  // Used to toggle the menu on small screens when clicking on the menu button
-  function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
+    scrollTrigger('.loader', {
+        rootMargin: '-10%',
+        cb: function (el) {
+            el.innerText = 'Loading...'
+            setTimeout(() => {
+                el.innerText = 'Task Complete!'
+            }, 1000)
+        }
+    })
+
+    // Change style of navbar on scroll
+    window.onscroll = function () { myFunction() };
+    function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        } else {
+            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        }
     }
-  }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
 }
+
 
 
 </script>
