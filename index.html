@@ -1462,9 +1462,12 @@ const isOpera = userAgent.includes('opr/') && parseInt(userAgent.split('opr/')[1
 // Check for Internet Explorer (before version 11)
 const isIE = userAgent.includes('msie') || userAgent.includes('trident/') && parseInt(userAgent.split('rv:')[1], 10) < 11;
 
+// Check if Intersection Observer is supported
+const isIntersectionObserverSupported = 'IntersectionObserver' in window;
+
 // Disable animations for the specified browsers
-if (isSafari || isChrome || isFirefox || isOpera || isIE) {
-  const elementsToDisableAnimation = document.querySelectorAll('.intro-text, .animate, .loader');
+if (isSafari || isChrome || isFirefox || isOpera || isIE || !isIntersectionObserverSupported) {
+  const elementsToDisableAnimation = document.querySelectorAll('.intro-text, .animate, .loader, .square');
 
   elementsToDisableAnimation.forEach((element) => {
     element.style.animation = 'none';
@@ -1478,7 +1481,7 @@ if (isSafari || isChrome || isFirefox || isOpera || isIE) {
   square.classList.remove('square-transition');
 
   // Create the observer, same as before:
-  const observerOptions = 'IntersectionObserver' in window ? { passive: true } : {};
+  const observerOptions = isIntersectionObserverSupported ? { passive: true } : {};
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -1503,7 +1506,7 @@ if (isSafari || isChrome || isFirefox || isOpera || isIE) {
   }
 
   function addObserver(el, options) {
-    if (!('IntersectionObserver' in window)) {
+    if (!isIntersectionObserverSupported) {
       if (options.cb) {
         options.cb(el)
       } else {
@@ -1511,7 +1514,7 @@ if (isSafari || isChrome || isFirefox || isOpera || isIE) {
       }
       return
     }
-    let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elemts list and the observer instance
+    let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elements list and the observer instance
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           if (options.cb) {
@@ -1563,6 +1566,7 @@ if (isSafari || isChrome || isFirefox || isOpera || isIE) {
     }
   }
 }
+
 
 </script>
 
