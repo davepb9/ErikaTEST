@@ -1446,6 +1446,42 @@ img {
         }</script>
 
 
+
+<script>
+  // To disable animations for older devices, Get the user agent string
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  // Check for Safari (before version 12)
+  const isSafari = userAgent.includes('safari/') && !userAgent.includes('chrome/') && parseInt(userAgent.split('version/')[1], 10) < 12;
+
+  // Check for Chrome (before version 50)
+  const isChrome = userAgent.includes('chrome/') && parseInt(userAgent.split('chrome/')[1], 10) < 50;
+
+  // Check for Firefox (before version 50)
+  const isFirefox = userAgent.includes('firefox/') && parseInt(userAgent.split('firefox/')[1], 10) < 50;
+
+  // Check for Opera (before version 36)
+  const isOpera = userAgent.includes('opr/') && parseInt(userAgent.split('opr/')[1], 10) < 36;
+
+  // Check for Internet Explorer (before version 11)
+  const isIE = userAgent.includes('msie') || userAgent.includes('trident/') && parseInt(userAgent.split('rv:')[1], 10) < 11;
+
+  // Disable animations for the specified browsers
+  if (isSafari || isChrome || isFirefox || isOpera || isIE) {
+    const elementsToDisableAnimation = document.querySelectorAll('.intro-text, .animate, .loader');
+
+    elementsToDisableAnimation.forEach((element) => {
+      element.style.animation = 'none';
+      element.style.WebkitAnimation = 'none';
+    });
+  }
+</script>
+
+
+
+
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Your JavaScript code to generate the phone number
