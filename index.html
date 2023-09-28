@@ -475,6 +475,17 @@ img {
 
 
 
+/* Disable animations for older Safari versions */
+.disable-animations .animate {
+  transition: none !important;
+  /* Add any additional styles to disable animations */
+}
+
+
+
+
+
+
 
   .icon-container {
     display: flex;
@@ -1307,7 +1318,8 @@ img {
     </footer>
 
 
-    <script>"use strict";
+<script>
+"use strict";
 
         const steps = [
             {
@@ -1424,57 +1436,132 @@ img {
             }, 2500);
         };
 
-        document.addEventListener("DOMContentLoaded", printSteps);</script>
-
-
-
-    <script>// JavaScript to detect Safari on iPhone
-        var isSafariOniPhone = /iPhone/.test(navigator.userAgent) && /Safari/.test(navigator.userAgent);
-
-        // JavaScript to detect Facebook Messenger's in-app browser
-        var isMessengerInAppBrowser = /FBAN/.test(navigator.userAgent);
-
-        // Check if the URL contains a query parameter indicating preview mode
-        var isPreviewMode = window.location.search.indexOf('preview=1') !== -1;
-
-        if (isSafariOniPhone && !isMessengerInAppBrowser && !isPreviewMode) {
-            // Apply styles specific to Safari on iPhone, but not in preview mode or in Messenger's in-app browser
-            document.querySelectorAll('.bgimg-1, .bgimg-2, .bgimg-3').forEach(function (element) {
-                element.style.backgroundAttachment = 'scroll';
-                // You can apply additional styles here if needed
-            });
-        }</script>
+        document.addEventListener("DOMContentLoaded", printSteps);
+</script>
 
 
 
 <script>
-  // To disable animations for older devices, Get the user agent string
-  const userAgent = navigator.userAgent.toLowerCase();
+// Get the user agent string
+const userAgent = navigator.userAgent.toLowerCase();
 
-  // Check for Safari (before version 12)
-  const isSafari = userAgent.includes('safari/') && !userAgent.includes('chrome/') && parseInt(userAgent.split('version/')[1], 10) < 12;
+// Check for Safari (before version 12)
+const isSafari = userAgent.includes('safari/') && !userAgent.includes('chrome/') && parseInt(userAgent.split('version/')[1], 10) < 12;
 
-  // Check for Chrome (before version 50)
-  const isChrome = userAgent.includes('chrome/') && parseInt(userAgent.split('chrome/')[1], 10) < 50;
+// Check for Chrome (before version 50)
+const isChrome = userAgent.includes('chrome/') && parseInt(userAgent.split('chrome/')[1], 10) < 50;
 
-  // Check for Firefox (before version 50)
-  const isFirefox = userAgent.includes('firefox/') && parseInt(userAgent.split('firefox/')[1], 10) < 50;
+// Check for Firefox (before version 50)
+const isFirefox = userAgent.includes('firefox/') && parseInt(userAgent.split('firefox/')[1], 10) < 50;
 
-  // Check for Opera (before version 36)
-  const isOpera = userAgent.includes('opr/') && parseInt(userAgent.split('opr/')[1], 10) < 36;
+// Check for Opera (before version 36)
+const isOpera = userAgent.includes('opr/') && parseInt(userAgent.split('opr/')[1], 10) < 36;
 
-  // Check for Internet Explorer (before version 11)
-  const isIE = userAgent.includes('msie') || userAgent.includes('trident/') && parseInt(userAgent.split('rv:')[1], 10) < 11;
+// Check for Internet Explorer (before version 11)
+const isIE = userAgent.includes('msie') || userAgent.includes('trident/') && parseInt(userAgent.split('rv:')[1], 10) < 11;
 
-  // Disable animations for the specified browsers
-  if (isSafari || isChrome || isFirefox || isOpera || isIE) {
-    const elementsToDisableAnimation = document.querySelectorAll('.intro-text, .animate, .loader');
+// Disable animations for the specified browsers
+if (isSafari || isChrome || isFirefox || isOpera || isIE) {
+  const elementsToDisableAnimation = document.querySelectorAll('.intro-text, .animate, .loader');
 
-    elementsToDisableAnimation.forEach((element) => {
-      element.style.animation = 'none';
-      element.style.WebkitAnimation = 'none';
+  elementsToDisableAnimation.forEach((element) => {
+    element.style.animation = 'none';
+    element.style.WebkitAnimation = 'none';
+  });
+} else {
+  // Intersection Observer is supported, proceed with animations
+
+  // SQUARE ANIMATION Numero 1 - Remove the transition class
+  const square = document.querySelector('.square');
+  square.classList.remove('square-transition');
+
+  // Create the observer, same as before:
+  const observerOptions = 'IntersectionObserver' in window ? { passive: true } : {};
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        square.classList.add('square-transition');
+        return;
+      }
+
+      square.classList.remove('square-transition');
     });
+  }, observerOptions);
+
+  observer.observe(document.querySelector('.square-wrapper'));
+
+  // BOX ANIMATIONssss Numero 2
+  function scrollTrigger(selector, options = {}) {
+    let els = document.querySelectorAll(selector);
+    els = Array.from(els)
+    els.forEach(el => {
+      addObserver(el, options)
+    })
   }
+
+  function addObserver(el, options) {
+    if (!('IntersectionObserver' in window)) {
+      if (options.cb) {
+        options.cb(el)
+      } else {
+        entry.target.classList.add('active')
+      }
+      return
+    }
+    let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elemts list and the observer instance
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (options.cb) {
+            options.cb(el)
+          } else {
+            entry.target.classList.add('active')
+          }
+          observer.unobserve(entry.target)
+        }
+      })
+    }, options)
+    observer.observe(el)
+  }
+  // Example usages:
+  scrollTrigger('.intro-text')
+
+  scrollTrigger('.scroll-reveal', {
+    rootMargin: '-10%',
+  })
+
+  scrollTrigger('.loader', {
+    rootMargin: '-10%',
+    cb: function (el) {
+      el.innerText = 'Loading...'
+      setTimeout(() => {
+        el.innerText = 'Task Complete!'
+      }, 1000)
+    }
+  })
+
+  // Change style of navbar on scroll
+  window.onscroll = function () { myFunction() };
+  function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+      navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+  }
+
+  // Used to toggle the menu on small screens when clicking on the menu button
+  function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+}
+
 </script>
 
 
@@ -1565,78 +1652,7 @@ img {
 </script>
 
 
-    <script>// SQUARE ANIMATION Numero 1 - Remove the transition class
-        const square = document.querySelector('.square');
-        square.classList.remove('square-transition');
-
-        // Create the observer, same as before:
-        const observerOptions = 'IntersectionObserver' in window ? { passive: true } : {};
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    square.classList.add('square-transition');
-                    return;
-                }
-
-                square.classList.remove('square-transition');
-            });
-        }, observerOptions);
-
-        observer.observe(document.querySelector('.square-wrapper'));
-
-
-
-
-        // BOX ANIMATIONssss Numero 2
-        function scrollTrigger(selector, options = {}) {
-            let els = document.querySelectorAll(selector)
-            els = Array.from(els)
-            els.forEach(el => {
-                addObserver(el, options)
-            })
-        }
-
-        function addObserver(el, options) {
-            if (!('IntersectionObserver' in window)) {
-                if (options.cb) {
-                    options.cb(el)
-                } else {
-                    entry.target.classList.add('active')
-                }
-                return
-            }
-            let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elemts list and the observer instance
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (options.cb) {
-                            options.cb(el)
-                        } else {
-                            entry.target.classList.add('active')
-                        }
-                        observer.unobserve(entry.target)
-                    }
-                })
-            }, options)
-            observer.observe(el)
-        }
-        // Example usages:
-        scrollTrigger('.intro-text')
-
-        scrollTrigger('.scroll-reveal', {
-            rootMargin: '-10%',
-        })
-
-        scrollTrigger('.loader', {
-            rootMargin: '-10%',
-            cb: function (el) {
-                el.innerText = 'Loading...'
-                setTimeout(() => {
-                    el.innerText = 'Task Complete!'
-                }, 1000)
-            }
-        })
-
+    <script>
 
 
 
